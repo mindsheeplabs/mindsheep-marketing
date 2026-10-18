@@ -14,18 +14,18 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL("https://mindsheep.com.au"),
   title: {
-    default: "Mindsheep Marketing | AI Lead Generation",
+    default: "Mindsheep Marketing | Humans helping humans with AI",
     template: "%s | Mindsheep Marketing",
   },
   description:
-    "Stop collecting form fills. AI that chats, qualifies and quotes instantly — so your team only gets the leads worth their time, and your ads learn to find more of them.",
+    "AI-powered marketing and development: Google Ads, social and UGC, content, AI SEO (GEO), websites and lead systems. All delivered faster and for less than a traditional agency — by people who talk to you like a person.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Mindsheep Marketing",
-    title: "Mindsheep Marketing | AI Lead Generation",
+    title: "Mindsheep Marketing | Humans helping humans with AI",
     description:
-      "More leads. Better leads. Less time chasing them. AI lead generation done properly.",
+      "AI runs on the inside. Humans talk to you on the outside. Marketing, development and lead systems rebuilt around AI.",
     url: "https://mindsheep.com.au",
   },
 };

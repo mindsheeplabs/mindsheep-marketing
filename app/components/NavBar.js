@@ -16,13 +16,19 @@ export default function NavBar({ activePage }) {
             Services
           </Link>
           <Link
+            href="/case-studies"
+            className={`nav-link text-sm font-semibold tracking-wide${activePage === "case-studies" ? " nav-link-active" : ""}`}
+          >
+            Case studies
+          </Link>
+          <Link
             href="/about"
             className={`nav-link text-sm font-semibold tracking-wide${activePage === "about" ? " nav-link-active" : ""}`}
           >
             About
           </Link>
           <Link href="/#contact" className="btn btn-primary">
-            Get Started
+            Book a Strategy Call
           </Link>
         </div>
       </div>

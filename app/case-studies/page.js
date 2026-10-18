@@ -251,13 +251,13 @@ export default function CaseStudiesPage() {
             className="text-sm font-semibold uppercase tracking-wide mb-4"
             style={{ color: "var(--secondary)" }}
           >
-            Proof of Work
+            Proof of work
           </p>
           <h1>
-            Real Clients. <span className="text-gradient">Real Results.</span>
+            Real businesses. <span className="text-gradient">Real numbers.</span>
           </h1>
           <p className="page-hero-desc mt-4">
-            We let the numbers do the talking. Every result below is from a real client engagement — no cherry-picking, no projections.
+            Every result below is from a real client engagement — the kind of growth we deliver when AI-powered marketing and development is done properly. No cherry-picking, no projections, no stock photos of handshakes.
           </p>
         </section>
 
@@ -281,13 +281,13 @@ export default function CaseStudiesPage() {
             }}
           >
             <h2 className="mb-4">
-              Want Results <span className="text-gradient">Like These?</span>
+              Want results <span className="text-gradient">like these?</span>
             </h2>
             <p
               className="max-w-2xl mx-auto mb-8"
               style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: "1.8" }}
             >
-              Every client story above started with a single conversation. Let&apos;s talk about what&apos;s possible for your business.
+              Every story above started with a 30-minute call. No pitch, no jargon — we look at where you are and point out the one or two moves that would make the biggest difference.
             </p>
             <a href="/#contact" className="btn btn-primary">
               Book a Strategy Call
