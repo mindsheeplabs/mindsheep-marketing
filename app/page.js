@@ -234,8 +234,13 @@ export default function Home() {
           <div className="persona-grid">
             {PERSONAS.map((p) => (
               <div key={p.photoKey} className="persona-card">
-                <div className="persona-photo" data-photo={p.photoKey}>
-                  <span className="persona-photo-label">Photo placeholder</span>
+                <div className="persona-photo has-photo">
+                  <Image
+                    src={`/people/${p.photoKey}.webp`}
+                    alt=""
+                    width={1024}
+                    height={1280}
+                  />
                 </div>
                 <p className="persona-caption">&ldquo;{p.caption}&rdquo;</p>
               </div>

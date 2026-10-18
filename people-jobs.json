@@ -1,0 +1,22 @@
+{
+  "out_dir": "C:/Users/idead/Desktop/mindsheep labs/website/public/people",
+  "size": "1024x1280",
+  "format": "webp",
+  "max_parallel": 3,
+  "skip_existing": true,
+  "style": "\n\nStyle: a real photograph, photorealistic, natural daylight, shallow depth of field, slight film grain, warm colour tone, candid documentary feel. Not a studio shoot, no stock-photo polish, no posing for the camera. Keep the person centred with clear space above the head and around the shoulders. No text, no logos, no watermark.",
+  "jobs": [
+    {
+      "name": "owner-office",
+      "prompt": "Scene: a modest small-business office, soft window light from the left, a workshop blurred in the background.\nSubject: an Australian business owner, a man in his late 40s, in a plain open-collar button-down shirt, sitting at his desk.\nDetails: looking slightly off camera with a relaxed, thoughtful expression, as if mid-thought during a conversation. Hands resting near a notebook.\nConstraints: head and shoulders framed with room above; not smiling at the lens; feels like a real tradesperson-turned-owner, not a model."
+    },
+    {
+      "name": "owner-coffee",
+      "prompt": "Scene: the reception area of a small Australian business, morning light, a tidy workspace softly out of focus behind.\nSubject: a woman in her late 30s who runs the business, standing, holding a ceramic coffee mug in both hands.\nDetails: casual professional, a simple knit top; a warm half-smile as if mid-conversation with someone just out of frame; approachable and unposed.\nConstraints: head and shoulders framed with room above; natural skin texture; feels like a real owner on a normal workday, not a model."
+    },
+    {
+      "name": "owner-workshop",
+      "prompt": "Scene: a working garage or timber workshop, overhead natural light, tools and timber racks out of focus behind, warm earth tones.\nSubject: an older Australian tradesman in his early 60s, weathered hands, a worn work shirt, a tape measure clipped to his belt.\nDetails: looking softly and directly at the camera with a trusting, slightly curious expression, like someone deciding whether to take advice.\nConstraints: head and shoulders framed with room above; honest lines on the face; feels like a real tradie, not a model."
+    }
+  ]
+}

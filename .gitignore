@@ -49,3 +49,6 @@ next-env.d.ts
 *.avi
 
 .vercel
+
+# chatgpt-image batch output (thread ids, local paths)
+people-jobs.results.json

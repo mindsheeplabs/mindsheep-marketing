@@ -64,6 +64,7 @@ const team = [
     desc:
       "16+ years in tech, marketing and lead generation. The person you&apos;ll speak to on your first call — and most of the ones after. Rebuilt the agency around AI in 2024 when it became obvious the game had changed.",
     photoKey: "team-david",
+    photo: "/WhatsApp Image 2025-09-22 at 10.31.29.jpeg",
   },
   {
     name: "Theresa",
@@ -193,9 +194,21 @@ export default function AboutPage() {
           <div className="team-grid-photo max-w-4xl mx-auto">
             {team.map((member) => (
               <div className="team-card-photo glass-panel" key={member.name}>
-                <div className="team-photo-placeholder" data-photo={member.photoKey}>
-                  <span className="persona-photo-label">Photo</span>
-                </div>
+                {member.photo ? (
+                  <div className="team-photo-placeholder has-photo">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={600}
+                      height={600}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                ) : (
+                  <div className="team-photo-placeholder" data-photo={member.photoKey}>
+                    <span className="persona-photo-label">Photo</span>
+                  </div>
+                )}
                 <p className="team-name" style={{ marginTop: "1rem" }}>{member.name}</p>
                 <p className="team-role">{member.role}</p>
                 <p
