@@ -1,42 +1,51 @@
-import { Inter, Outfit } from "next/font/google";
+import { Geist, Outfit } from "next/font/google";
 import "./globals.css";
+import Sky from "./components/Sky";
+import BookDialog from "./components/BookDialog";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
+// Two families, as on mindsheeplabs.com: Outfit 600 for display, Geist for
+// everything you read. Both are variable fonts, so no weight list is needed.
+// The variables feed --sc-font-display and --sc-font-text in globals.css.
 const outfit = Outfit({
-  variable: "--font-outfit",
+  variable: "--sc-font-display",
   subsets: ["latin"],
+  display: "swap",
 });
+
+const geist = Geist({
+  variable: "--sc-font-text",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const TITLE = "Mindsheep Marketing Australia | We put AI to work in your marketing.";
+const DESCRIPTION =
+  "We put AI to work in your marketing, so the same budget buys you more. AI-powered Google Ads, AI SEO, AI social and content, AI-generated websites, and AI chat and voice agents. Perth based, working with businesses across Australia.";
 
 export const metadata = {
   metadataBase: new URL("https://mindsheep.com.au"),
   title: {
-    default: "Mindsheep Marketing | Humans helping humans with AI",
-    template: "%s | Mindsheep Marketing",
+    default: TITLE,
+    template: "%s | Mindsheep Marketing Australia",
   },
-  description:
-    "AI-powered marketing and development: Google Ads, social and UGC, content, AI SEO (GEO), websites and lead systems. All delivered faster and for less than a traditional agency — by people who talk to you like a person.",
-  alternates: { canonical: "/" },
+  description: DESCRIPTION,
   openGraph: {
     type: "website",
-    siteName: "Mindsheep Marketing",
-    title: "Mindsheep Marketing | Humans helping humans with AI",
-    description:
-      "AI runs on the inside. Humans talk to you on the outside. Marketing, development and lead systems rebuilt around AI.",
+    siteName: "Mindsheep Marketing Australia",
+    locale: "en_AU",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://mindsheep.com.au",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      {/* We apply the Inter className directly to the body to ensure it becomes the default font, 
-          while injecting both fonts as CSS variables for custom usage in globals.css */}
-      <body className={`${inter.className} ${inter.variable} ${outfit.variable}`}>
+    <html lang="en-AU">
+      <body className={`${outfit.variable} ${geist.variable}`}>
+        <Sky />
         {children}
+        <BookDialog />
       </body>
     </html>
   );

@@ -1,0 +1,143 @@
+/* About page: layout only. Tokens and shared classes come from app/globals.css. */
+
+/* Founder photo at the top of the story column (landscape, shown whole) */
+.founder {
+  display: grid;
+  gap: var(--sc-3);
+  margin: 0;
+}
+.founder img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--sc-r-md);
+  box-shadow: var(--sc-e1);
+  background: var(--sc-surface);
+}
+.founder figcaption {
+  font-size: var(--sc-t-sm);
+  color: var(--sc-ink-soft);
+}
+.founder figcaption b {
+  color: var(--sc-ink);
+  font-weight: 500;
+}
+@media (min-width: 900px) {
+  .founder {
+    grid-column: 1;
+  }
+}
+
+/* "What that means for you": four cards in the .case language, no links */
+.means {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sc-5);
+}
+@media (min-width: 900px) {
+  .means {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.mean {
+  display: grid;
+  gap: var(--sc-2);
+  padding: var(--sc-5);
+  background: #FFFFFF;
+  border: 1px solid var(--sc-hairline);
+  border-radius: var(--sc-r-lg);
+  box-shadow: var(--sc-e1);
+}
+.meanN {
+  font-size: var(--sc-t-xs);
+  letter-spacing: 0.08em;
+  color: var(--sc-accent);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.meanT {
+  margin: 0;
+  font-family: var(--sc-font-display);
+  font-weight: 600;
+  font-size: var(--sc-t-xl);
+  letter-spacing: var(--sc-track-snug);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+.meanP {
+  margin: var(--sc-1) 0 0;
+  color: var(--sc-ink-soft);
+}
+
+/* The team: 1, 2, then 4 columns */
+.team {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sc-5);
+}
+@media (min-width: 700px) {
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .team {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.member {
+  display: grid;
+  gap: var(--sc-2);
+  align-content: start;
+  padding: var(--sc-5);
+  background: #FFFFFF;
+  border: 1px solid var(--sc-hairline);
+  border-radius: var(--sc-r-lg);
+  box-shadow: var(--sc-e1);
+}
+/* The face: a 6.5rem rounded square, the same as a case card face.
+   A photo when we have one, calm initials on a soft tint when we do not. */
+.face,
+.initials {
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: var(--sc-r-md);
+  margin-bottom: var(--sc-3);
+}
+.face {
+  object-fit: cover;
+  display: block;
+}
+.initials {
+  display: grid;
+  place-items: center;
+  background: var(--sc-surface);
+  color: var(--sc-accent);
+  font-family: var(--sc-font-display);
+  font-weight: 600;
+  font-size: var(--sc-t-xl);
+  letter-spacing: var(--sc-track-snug);
+}
+.role {
+  font-size: var(--sc-t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-accent);
+  font-weight: 500;
+}
+.name {
+  margin: 0;
+  font-family: var(--sc-font-display);
+  font-weight: 600;
+  font-size: var(--sc-t-lg);
+  letter-spacing: var(--sc-track-snug);
+  line-height: 1.15;
+}
+.bio {
+  margin: var(--sc-1) 0 0;
+  color: var(--sc-ink-soft);
+  font-size: var(--sc-t-sm);
+}

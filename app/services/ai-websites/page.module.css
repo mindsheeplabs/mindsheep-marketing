@@ -1,0 +1,33 @@
+/* AI-generated websites: two small additions to the story family.
+   A numbered list for the four steps, and a quiet row of client logos
+   under the proof. The ticks inside a bit are styled in globals.css. */
+
+ol.steps {
+  margin: var(--sc-3) 0 0;
+  padding-left: 1.4em;
+  color: var(--sc-ink-soft);
+  max-width: var(--sc-measure);
+  display: grid;
+  gap: var(--sc-2);
+}
+ol.steps li::marker {
+  color: var(--sc-accent);
+  font-weight: 500;
+}
+
+ul.logos {
+  list-style: none;
+  margin: var(--sc-5) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sc-4) var(--sc-6);
+}
+ul.logos img {
+  display: block;
+  height: 1.75rem;
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.75;
+}

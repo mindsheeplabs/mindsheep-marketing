@@ -51,4 +51,7 @@ next-env.d.ts
 .vercel
 
 # chatgpt-image batch output (thread ids, local paths)
-people-jobs.results.json
+people-jobs*.results.json
+
+# design preview screenshots (regenerable)
+design-previews/shots/

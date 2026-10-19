@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mindsheep Marketing · Same budget. A lot more done.</title>
+<meta name="description" content="Marketing and websites, powered by AI. Google Ads, SEO and AI search, social content, websites and AI automations for Australian businesses. Same budget, a lot more delivered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Geist:wght@400;500&display=swap">
+<style>
+/* =====================================================================
+   Mindsheep Marketing · design direction "Soft product"
+   Sibling of Mindsheep Labs: white, calm, plain words, rounded cards,
+   tick lists. Labs owns green; this site uses a muted slate blue and
+   very pale tinted bands to separate content.
+   ===================================================================== */
+:root {
+  /* colour */
+  --bg:        #FFFFFF;
+  --surface:   #F5F7FA;   /* pale slate band */
+  --surface-2: #EEF2F7;   /* a step deeper, for inset panels */
+  --ink:       #16202B;
+  --ink-2:     #3A4653;   /* secondary text that still reads as ink */
+  --muted:     #5B6775;   /* 5.6:1 on white, 5.1:1 on --surface */
+  --accent:    #3A5A85;   /* muted slate blue, 7.0:1 on white */
+  --accent-deep:#2E4A70;
+  --accent-soft:#E8EEF6;  /* tint for badges, icons, chart fill */
+  --accent-mid: #B9C9DF;  /* chart secondary */
+  --line:      #E3E8EE;
+  --line-strong:#CDD5DE;
+  --ok:        #3A5A85;
+
+  /* type */
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-body:    "Geist", system-ui, sans-serif;
+  --t-xs:  0.78rem;
+  --t-sm:  0.9rem;
+  --t-base:1rem;
+  --t-md:  1.1rem;
+  --t-lg:  1.22rem;
+  --t-xl:  clamp(1.45rem, 1.1rem + 1.2vw, 1.9rem);
+  --t-2xl: clamp(1.9rem, 1.3rem + 2.2vw, 2.9rem);
+  --t-3xl: clamp(2.5rem, 1.5rem + 4.2vw, 4.4rem);
+  --num:   clamp(2.6rem, 1.8rem + 3vw, 3.9rem);
+
+  /* rhythm */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4rem; --s-9: 6rem;
+  --section: clamp(4rem, 3rem + 4vw, 7rem);
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --maxw: 1180px;
+
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(22,32,43,.04), 0 2px 8px rgba(22,32,43,.04);
+  --shadow-2: 0 2px 6px rgba(22,32,43,.05), 0 12px 32px -8px rgba(22,32,43,.10);
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --nav-h: 4.25rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--t-base); line-height: 1.6;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+img { display: block; max-width: 100%; }
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height: 1.12; letter-spacing: -0.015em; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section { padding-block: var(--section); }
+.eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: var(--t-xs); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--s-4); }
+.eyebrow::before { content: ""; width: 1.25rem; height: 2px; border-radius: 2px; background: var(--accent); opacity: .6; }
+.lede { color: var(--muted); font-size: var(--t-md); line-height: 1.6; max-width: 56ch; }
+.head { max-width: 46rem; margin-bottom: var(--s-7); }
+.head h2 { font-size: var(--t-2xl); }
+.head .lede { margin-top: var(--s-4); }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: .7rem 1.35rem; border-radius: var(--radius-pill); border: 1px solid transparent; font: 500 var(--t-base)/1.2 var(--font-body); text-decoration: none; cursor: pointer; white-space: nowrap; transition: background .16s var(--ease), border-color .16s var(--ease), transform .16s var(--ease), box-shadow .16s var(--ease), color .16s var(--ease); }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 1px 2px rgba(58,90,133,.25); }
+.btn-primary:hover { background: var(--accent-deep); box-shadow: 0 4px 14px -4px rgba(58,90,133,.45); }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--line-strong); }
+.btn-ghost:hover { border-color: var(--ink); background: var(--surface); }
+.btn-sm { min-height: 40px; padding: .5rem 1.05rem; font-size: var(--t-sm); }
+.link { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent-mid); text-decoration-thickness: 1.5px; text-underline-offset: .2em; transition: color .14s var(--ease), text-decoration-color .14s var(--ease); }
+.link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* ------------------------------------------------------------------ nav */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.nav-in { display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); height: var(--nav-h); }
+.brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--ink); }
+.brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; color: #fff; }
+.brand-mark svg { width: 18px; height: 18px; }
+.brand small { font-family: var(--font-body); font-weight: 400; color: var(--muted); font-size: var(--t-sm); margin-left: .1rem; }
+.nav-links { display: none; align-items: center; gap: 1.6rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: var(--t-sm); font-weight: 500; color: var(--ink-2); text-decoration: none; transition: color .14s var(--ease); }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { display: none; }
+.nav-toggle { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: 10px; background: #fff; cursor: pointer; color: var(--ink); }
+.nav-toggle svg { width: 20px; height: 20px; }
+.nav-toggle .x { display: none; }
+.nav.is-open .nav-toggle .x { display: block; }
+.nav.is-open .nav-toggle .bars { display: none; }
+.nav-mobile { display: none; border-top: 1px solid var(--line); background: #fff; }
+.nav.is-open .nav-mobile { display: block; }
+.nav-mobile ul { list-style: none; margin: 0; padding: var(--s-3) 0 var(--s-4); display: grid; }
+.nav-mobile a { display: block; padding: .8rem 0; font-size: var(--t-md); font-weight: 500; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.nav-mobile .btn { margin-top: var(--s-4); width: 100%; }
+@media (min-width: 900px) {
+  .nav-links, .nav-cta { display: inline-flex; }
+  .nav-toggle, .nav-mobile { display: none !important; }
+}
+
+/* ----------------------------------------------------------------- hero */
+.hero { padding-block: clamp(3rem, 2rem + 4vw, 6rem) clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+.hero-grid { display: grid; gap: var(--s-7); align-items: center; }
+.hero h1 { font-size: var(--t-3xl); letter-spacing: -0.025em; max-width: 12ch; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { margin-top: var(--s-5); max-width: 44ch; }
+.ticks { list-style: none; margin: var(--s-6) 0 0; padding: 0; display: grid; gap: .7rem; max-width: 42ch; }
+.ticks li { display: flex; gap: .8rem; align-items: flex-start; line-height: 1.45; color: var(--ink-2); }
+.tick { flex: 0 0 auto; width: 1.4rem; height: 1.4rem; border-radius: 7px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-top: .05rem; }
+.tick svg { width: .85rem; height: .85rem; }
+.hero-cta { margin-top: var(--s-6); display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-4); align-items: center; }
+
+/* the outcome panel: a calm, product-like card on the right */
+.panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-2); overflow: hidden; width: 100%; max-width: 30rem; margin-inline: auto; }
+.panel-top { display: flex; justify-content: space-between; align-items: center; padding: .9rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--line); font-size: var(--t-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.panel-top .live { display: inline-flex; align-items: center; gap: .4rem; color: var(--accent); letter-spacing: .02em; text-transform: none; font-size: var(--t-sm); }
+.panel-top .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.panel-body { padding: 1.25rem 1.25rem 1.4rem; display: grid; gap: 1.1rem; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.kpi { display: grid; gap: .15rem; }
+.kpi b { font-family: var(--font-heading); font-weight: 600; font-size: 1.9rem; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: var(--t-xs); color: var(--muted); }
+.kpi em { font-style: normal; font-size: var(--t-xs); color: var(--accent); font-weight: 500; }
+.bars { display: grid; gap: .55rem; }
+.bar { display: grid; grid-template-columns: 7.5rem 1fr auto; align-items: center; gap: .75rem; font-size: var(--t-xs); color: var(--muted); }
+.bar i { height: 8px; border-radius: 4px; background: var(--accent-soft); overflow: hidden; display: block; }
+.bar i::after { content: ""; display: block; height: 100%; width: var(--w, 50%); border-radius: 4px; background: var(--accent); }
+.bar.soft i::after { background: var(--accent-mid); }
+.bar b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+.panel-note { border-top: 1px solid var(--line); padding-top: .9rem; display: flex; gap: .7rem; align-items: flex-start; font-size: var(--t-sm); color: var(--ink-2); line-height: 1.45; }
+.panel-note .tick { width: 1.25rem; height: 1.25rem; }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-8); }
+  .panel { margin-inline: 0 0; margin-left: auto; }
+}
+
+/* -------------------------------------------------------- differentiator */
+.diff-grid { display: grid; gap: var(--s-7); align-items: center; }
+.diff h2 { font-size: var(--t-2xl); max-width: 16ch; }
+.diff .body { margin-top: var(--s-5); color: var(--ink-2); font-size: var(--t-md); line-height: 1.65; max-width: 52ch; }
+.diff .body b { font-weight: 500; color: var(--ink); }
+/* "how the money goes further": two stacked bars of the same width */
+.money { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.4rem; box-shadow: var(--shadow-1); display: grid; gap: 1.25rem; }
+.money h3 { font-size: var(--t-md); font-weight: 600; }
+.money p.sub { font-size: var(--t-sm); color: var(--muted); margin-top: .2rem; }
+.row { display: grid; gap: .55rem; }
+.row-label { display: flex; justify-content: space-between; align-items: baseline; gap: .25rem 1rem; flex-wrap: wrap; font-size: var(--t-sm); }
+.row-label b { font-weight: 500; color: var(--ink); }
+.row-label span { color: var(--muted); font-size: var(--t-xs); }
+.stack { display: flex; gap: 3px; height: 34px; }
+.stack > span { display: grid; place-items: center; height: 100%; border-radius: 7px; font-size: var(--t-xs); font-weight: 500; overflow: hidden; white-space: nowrap; min-width: 0; }
+.seg-grey { background: var(--surface-2); color: var(--muted); }
+.seg-grey2 { background: #E4E9EF; color: var(--muted); }
+.seg-accent { background: var(--accent); color: #fff; }
+.seg-accent2 { background: var(--accent-mid); color: var(--ink); }
+.seg-accent3 { background: var(--accent-soft); color: var(--accent); }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; font-size: var(--t-xs); color: var(--muted); padding-top: .9rem; border-top: 1px solid var(--line); }
+.legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.money .foot { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; font-size: var(--t-sm); color: var(--ink-2); }
+.money .foot b { font-family: var(--font-heading); font-size: var(--t-lg); color: var(--accent); font-weight: 600; white-space: nowrap; }
+@media (min-width: 900px) { .diff-grid { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--s-9); } }
+@media (max-width: 480px) { .stack > span { font-size: 0; } .row-label span { flex: 1 1 100%; } }
+
+/* -------------------------------------------------------------- personas */
+.people { display: grid; gap: var(--s-5); }
+.person { display: grid; gap: var(--s-4); }
+.person figure { margin: 0; aspect-ratio: 4 / 5; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); }
+.person img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.person:hover img { transform: scale(1.02); }
+.person blockquote { margin: 0; padding: 0 .25rem; font-style: italic; font-size: var(--t-md); line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.person blockquote::before { content: "\201C"; color: var(--accent); margin-right: .1em; }
+.person blockquote::after { content: "\201D"; color: var(--accent); margin-left: .05em; }
+@media (min-width: 700px) { .people { grid-template-columns: repeat(3, 1fr); gap: var(--s-6); } }
+
+/* ----------------------------------------------------------------- proof */
+.proof .wordmarks { display: flex; flex-wrap: wrap; gap: .9rem 2.5rem; align-items: center; justify-content: flex-start; margin-bottom: var(--s-7); padding-bottom: var(--s-6); border-bottom: 1px solid var(--line); }
+.proof .wordmarks small { font-size: var(--t-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; flex: 1 1 100%; }
+.wordmark { font-family: var(--font-heading); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--ink-2); opacity: .75; transition: opacity .16s var(--ease), color .16s var(--ease); }
+.wordmark:hover { opacity: 1; color: var(--ink); }
+@media (min-width: 700px) { .proof .wordmarks small { flex: 0 0 auto; margin-right: .5rem; } }
+.numbers { display: grid; gap: var(--s-4); }
+.num { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.6rem 1.6rem 1.5rem; display: grid; gap: .5rem; box-shadow: var(--shadow-1); transition: box-shadow .2s var(--ease), transform .2s var(--ease), border-color .2s var(--ease); }
+.num:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); border-color: var(--line-strong); }
+.num b { font-family: var(--font-heading); font-weight: 600; font-size: var(--num); line-height: 1; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.num b small { font-size: .5em; color: var(--accent); letter-spacing: -0.01em; margin-left: .1em; }
+.num p { color: var(--ink-2); line-height: 1.45; max-width: 24ch; }
+.num .tag { font-size: var(--t-xs); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
+@media (min-width: 700px) { .numbers { grid-template-columns: repeat(3, 1fr); gap: var(--s-5); } }
+
+/* -------------------------------------------------------------- services */
+.services { display: grid; gap: var(--s-4); }
+.svc { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.6rem; display: grid; gap: .9rem; align-content: start; box-shadow: var(--shadow-1); text-decoration: none; color: inherit; transition: box-shadow .2s var(--ease), transform .2s var(--ease), border-color .2s var(--ease); }
+.svc:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); border-color: var(--accent-mid); }
+.svc:focus-visible { outline-offset: 4px; }
+.svc-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+.svc-icon svg { width: 20px; height: 20px; }
+.svc h3 { font-size: var(--t-lg); }
+.svc p { color: var(--ink-2); line-height: 1.55; font-size: var(--t-base); }
+.svc .go { margin-top: auto; padding-top: .3rem; font-size: var(--t-sm); font-weight: 500; color: var(--accent); display: inline-flex; align-items: center; gap: .35rem; }
+.svc .go svg { width: 14px; height: 14px; transition: transform .2s var(--ease); }
+.svc:hover .go svg { transform: translateX(3px); }
+.partner { margin-top: var(--s-6); display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem; padding: 1rem 1.25rem; border: 1px dashed var(--line-strong); border-radius: var(--radius); background: var(--surface); font-size: var(--t-sm); color: var(--ink-2); }
+.partner .badge { font-size: var(--t-xs); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; color: var(--accent); background: var(--accent-soft); border-radius: var(--radius-pill); padding: .25rem .6rem; }
+@media (min-width: 700px) { .services { grid-template-columns: repeat(2, 1fr); gap: var(--s-5); } }
+@media (min-width: 1000px) {
+  .services { grid-template-columns: repeat(6, 1fr); }
+  .svc:nth-child(1), .svc:nth-child(2) { grid-column: span 3; }
+  .svc:nth-child(3), .svc:nth-child(4), .svc:nth-child(5) { grid-column: span 2; }
+}
+
+/* ------------------------------------------------------------ case study */
+.case { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-1); overflow: hidden; display: grid; }
+.case-main { padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); display: grid; gap: var(--s-4); align-content: start; }
+.case-main h3 { font-size: var(--t-xl); max-width: 22ch; }
+.case-main p { color: var(--ink-2); max-width: 52ch; }
+.case-stats { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin-top: var(--s-2); }
+.case-stats div b { display: block; font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
+.case-stats div span { font-size: var(--t-xs); color: var(--muted); }
+.case-quote { background: var(--surface); border-top: 1px solid var(--line); padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); display: grid; gap: 1rem; align-content: center; }
+.case-quote blockquote { margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: var(--t-lg); line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
+.case-quote cite { font-style: normal; display: flex; align-items: center; gap: .7rem; font-size: var(--t-sm); color: var(--muted); }
+.case-quote cite i { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font: 500 .8rem var(--font-heading); font-style: normal; }
+.case-quote cite b { color: var(--ink); font-weight: 500; }
+@media (min-width: 900px) {
+  .case { grid-template-columns: 7fr 5fr; }
+  .case-quote { border-top: 0; border-left: 1px solid var(--line); }
+}
+
+/* ------------------------------------------------------------------- cta */
+.cta-grid { display: grid; gap: var(--s-7); align-items: start; }
+.cta h2 { font-size: var(--t-2xl); max-width: 16ch; }
+.cta .lede { margin-top: var(--s-4); }
+.cta .mini { margin-top: var(--s-6); display: grid; gap: .6rem; list-style: none; padding: 0; }
+.cta .mini li { display: flex; gap: .7rem; align-items: flex-start; color: var(--ink-2); font-size: var(--t-sm); line-height: 1.45; }
+.cta .mini .tick { width: 1.25rem; height: 1.25rem; }
+.form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.25rem, 1rem + 1.5vw, 2rem); box-shadow: var(--shadow-2); display: grid; gap: 1rem; }
+.field { display: grid; gap: .4rem; }
+.field label { font-size: var(--t-sm); font-weight: 500; color: var(--ink); }
+.field input, .field select, .field textarea { width: 100%; font: inherit; font-size: var(--t-base); color: var(--ink); background: #fff; border: 1px solid var(--line-strong); border-radius: 10px; padding: .7rem .85rem; transition: border-color .14s var(--ease), box-shadow .14s var(--ease); }
+.field input::placeholder, .field textarea::placeholder { color: #8A96A3; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(58,90,133,.14); }
+.field textarea { min-height: 110px; resize: vertical; }
+.field select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235B6775' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right .8rem center; padding-right: 2.4rem; }
+.form .btn { width: 100%; margin-top: .25rem; }
+.form small { font-size: var(--t-xs); color: var(--muted); text-align: center; }
+.form-row { display: grid; gap: 1rem; }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .cta-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-9); } }
+
+/* ---------------------------------------------------------------- footer */
+.footer { border-top: 1px solid var(--line); padding-block: var(--s-7) var(--s-6); }
+.footer-grid { display: grid; gap: var(--s-6); }
+.footer-brand p { margin-top: .8rem; color: var(--muted); font-size: var(--t-sm); max-width: 30ch; }
+.footer h4 { font-family: var(--font-body); font-size: var(--t-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: .75rem; }
+.footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.footer ul a { font-size: var(--t-sm); color: var(--ink-2); text-decoration: none; }
+.footer ul a:hover { color: var(--accent); }
+.footer-bottom { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; font-size: var(--t-xs); color: var(--muted); }
+.footer-bottom a { color: inherit; }
+@media (min-width: 700px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Mindsheep Marketing home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 10 6l4 8 2-4 4 8"/></svg></span>
+      Mindsheep <small>Marketing</small>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/services">Services</a></li>
+      <li><a href="/case-studies">Case studies</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm nav-cta" href="#book">Book a Strategy Call</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
+    <div class="wrap">
+      <ul>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/case-studies">Case studies</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#book">Book a Strategy Call</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Marketing and websites, powered by AI</p>
+      <h1>Same budget. <span>A lot more done.</span></h1>
+      <p class="lede">We use AI across everything we do: Google Ads, SEO, social content, websites. You do not need to know how it works. You see it in what gets delivered, and what it costs.</p>
+      <ul class="ticks">
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>More leads from the same ad spend</li>
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Fresh content every week, made from your real photos</li>
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>A website built from what you already have</li>
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Found on Google and in AI search</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#book">Book a Strategy Call</a>
+        <a class="btn btn-ghost" href="#services">See what we do</a>
+      </div>
+    </div>
+
+    <aside class="panel" aria-label="Example of what a client sees each month">
+      <div class="panel-top"><span>Your month, plainly</span><span class="live">Tuned daily</span></div>
+      <div class="panel-body">
+        <div class="kpis">
+          <div class="kpi"><b>385</b><span>leads this month</span><em>from zero, six months ago</em></div>
+          <div class="kpi"><b>-40.7%</b><span>cost per lead</span><em>same ad budget</em></div>
+        </div>
+        <div class="bars">
+          <div class="bar"><span>Google Ads</span><i style="--w:86%"></i><b>212 leads</b></div>
+          <div class="bar"><span>Google + AI search</span><i style="--w:54%"></i><b>131 leads</b></div>
+          <div class="bar soft"><span>Social content</span><i style="--w:22%"></i><b>42 leads</b></div>
+        </div>
+        <div class="panel-note"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Four new pages built and 12 posts published this month, from your own photos. Nothing extra on the invoice.</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR -->
+<section class="band section diff">
+  <div class="wrap diff-grid">
+    <div>
+      <p class="eyebrow">Why it costs the same and you get more</p>
+      <h2>Other agencies are doing the same old thing.</h2>
+      <p class="body">And charging the same money for it. We rebuilt how we work around AI, so the hours that used to go on setup, drafts and reporting now go on more campaigns tested, more content made, more pages built. <b>Same budget. More delivered. That is the whole point.</b></p>
+    </div>
+
+    <div class="money" role="figure" aria-label="Where a month of your budget goes: a typical agency compared with Mindsheep">
+      <div>
+        <h3>Where a month of your budget goes</h3>
+        <p class="sub">Same fee. The difference is what the hours get spent on.</p>
+      </div>
+      <div class="row">
+        <div class="row-label"><b>A typical agency</b><span>about a third goes on the work you see</span></div>
+        <div class="stack" aria-hidden="true">
+          <span class="seg-grey" style="flex:0 0 30%">Setup</span>
+          <span class="seg-grey2" style="flex:0 0 22%">Drafts</span>
+          <span class="seg-grey" style="flex:0 0 16%">Reports</span>
+          <span class="seg-accent" style="flex:1">Work you see</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-label"><b>Mindsheep</b><span>AI handles the set up, drafts and reporting</span></div>
+        <div class="stack" aria-hidden="true">
+          <span class="seg-grey" style="flex:0 0 10%">AI</span>
+          <span class="seg-accent" style="flex:0 0 38%">Campaigns tested</span>
+          <span class="seg-accent2" style="flex:0 0 30%">Content made</span>
+          <span class="seg-accent3" style="flex:1">Pages built</span>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--surface-2);border:1px solid var(--line-strong)"></i>Setup, drafts, reporting</span>
+        <span><i style="background:var(--accent)"></i>Campaigns, the work you see</span>
+        <span><i style="background:var(--accent-mid)"></i>Content</span>
+        <span><i style="background:var(--accent-soft);border:1px solid var(--accent-mid)"></i>Pages</span>
+      </div>
+      <div class="foot"><span>Hours on work you can actually see</span><b>roughly 3x</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="section">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Who we work with</p>
+      <h2>Businesses that want results, not a technology lesson.</h2>
+    </div>
+    <div class="people">
+      <article class="person">
+        <figure><img src="../../public/people/owner-office.webp" width="800" height="1000" alt="A business owner at a desk in a small office" loading="lazy"></figure>
+        <blockquote>I run a trades business. I do not want to learn marketing. I just want more jobs on the calendar.</blockquote>
+      </article>
+      <article class="person">
+        <figure><img src="../../public/people/owner-coffee.webp" width="800" height="1000" alt="A business owner holding a coffee, phone in hand" loading="lazy"></figure>
+        <blockquote>I am the one answering the phone. Any system you build has to make my life easier, not harder.</blockquote>
+      </article>
+      <article class="person">
+        <figure><img src="../../public/people/owner-workshop.webp" width="800" height="1000" alt="A business owner standing in a workshop" loading="lazy"></figure>
+        <blockquote>I know AI is a big deal. I do not know where to start. I just want someone I can trust to handle it.</blockquote>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="band section proof">
+  <div class="wrap">
+    <div class="wordmarks">
+      <small>Trusted by</small>
+      <span class="wordmark">Aldott Homes</span>
+      <span class="wordmark">WillShip International</span>
+      <span class="wordmark">Highline Sheds</span>
+      <span class="wordmark">WestCoast HiFi</span>
+    </div>
+    <div class="numbers">
+      <div class="num">
+        <span class="tag">Google Ads + SEO</span>
+        <b>385</b>
+        <p>leads a month, from zero, in 6 months</p>
+      </div>
+      <div class="num">
+        <span class="tag">Google Ads</span>
+        <b>2.07<small>x</small></b>
+        <p>the leads, at 40.7% lower cost per lead</p>
+      </div>
+      <div class="num">
+        <span class="tag">Google Ads</span>
+        <b>2.09<small>x</small></b>
+        <p>the leads, at 30.5% lower cost per lead</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What we do</p>
+      <h2>Five things, each one answering the same question: what does this mean for me?</h2>
+      <p class="lede">We set it up, we run it with AI, you see the result. No technology lesson required.</p>
+    </div>
+    <div class="services">
+      <a class="svc" href="/services/google-ads">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>
+        <h3>Google Ads</h3>
+        <p>Run on MarketMetrica, our own system. More leads from the same spend, tuned every day, not every month.</p>
+        <span class="go">What it means for you <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc" href="/services/seo-ai-search">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.5-4.5"/><path d="M8 10.5h5M10.5 8v5"/></svg></span>
+        <h3>SEO and AI Search</h3>
+        <p>Rank on Google, and get cited where people now ask: ChatGPT, Perplexity, Google AI Overviews. MarketMetrica tracks both.</p>
+        <span class="go">What it means for you <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc" href="/services/social-content">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="m3.5 15 4.5-4 4 3.5 3-2.5 5.5 4"/><circle cx="15.5" cy="9" r="1.5"/></svg></span>
+        <h3>Social and Content</h3>
+        <p>AI UGC video, posts and creative made from your real products and people. Your photos, upscaled and reworked. Fresh every week, and it is not fake.</p>
+        <span class="go">What it means for you <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc" href="/services/websites">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M3 9.5h18M8 14h5"/></svg></span>
+        <h3>Websites</h3>
+        <p>Built from what you already have: your photos, your words, your offers, into a site that fits you. Weeks, not months.</p>
+        <span class="go">What it means for you <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc" href="/services/ai-automations">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h7l2 3h7v9H4z"/><path d="M8 4h8"/><path d="M12 13v3M10.5 14.5h3"/></svg></span>
+        <h3>AI Automations</h3>
+        <p>AI SMS follow-up, instant quotes, lead handling. The small systems that give you hours back every week.</p>
+        <span class="go">What it means for you <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <p class="partner"><span class="badge">Side note</span><span>Have a pure software project? We refer you to our partner, <a class="link" href="https://mindsheeplabs.com">Mindsheep Labs</a>.</span></p>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="band section">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Case study</p>
+      <h2>Real work, real numbers.</h2>
+    </div>
+    <article class="case">
+      <div class="case-main">
+        <span class="eyebrow" style="margin:0">WillShip International · Freight</span>
+        <h3>How WillShip turned instant quoting into a lead engine.</h3>
+        <p>Freight customers ask detailed questions all day. We built instant quoting on the website and put Google Ads behind it, so every enquiry arrives with the details already gathered and the team only talks to people who are ready.</p>
+        <div class="case-stats">
+          <div><b>Instant</b><span>quotes on the site, day and night</span></div>
+          <div><b>2.07x</b><span>the leads, same spend</span></div>
+          <div><b>-40.7%</b><span>cost per lead</span></div>
+        </div>
+        <div><a class="link" href="/case-studies">Read the full story</a></div>
+      </div>
+      <div class="case-quote">
+        <blockquote>&ldquo;Great work on the whole project mate, you have done an amazing job. I have just flicked it live.&rdquo;</blockquote>
+        <cite><i aria-hidden="true">NP</i><span><b>Nick Proctor</b><br>WillShip International</span></cite>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta" id="book">
+  <div class="wrap cta-grid">
+    <div>
+      <p class="eyebrow">Book a Strategy Call</p>
+      <h2>Tell us what you would do with more leads.</h2>
+      <p class="lede">A 30 minute call. We look at what you spend and what you get, and tell you plainly where AI would change the numbers.</p>
+      <ul class="mini">
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>No pitch deck. We look at your actual numbers.</li>
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>You leave with a plain answer, whether or not you go with us.</li>
+        <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Australian business hours, by phone or video.</li>
+      </ul>
+    </div>
+    <form class="form" action="#" method="post" onsubmit="event.preventDefault()">
+      <div class="form-row">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@business.com.au" required></div>
+      </div>
+      <div class="field"><label for="f-about">What do you do and where are you stuck?</label><textarea id="f-about" name="about" placeholder="e.g. We build sheds in regional WA. Plenty of enquiries, not enough of them turn into jobs."></textarea></div>
+      <div class="field"><label for="f-budget">Monthly budget</label>
+        <select id="f-budget" name="budget">
+          <option value="" selected>Choose a range</option>
+          <option>Under $2,000</option>
+          <option>$2,000 to $5,000</option>
+          <option>$5,000 to $10,000</option>
+          <option>$10,000 to $25,000</option>
+          <option>Over $25,000</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Book a Strategy Call</button>
+      <small>We reply within one business day. No spam, no drip campaign.</small>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 10 6l4 8 2-4 4 8"/></svg></span>Mindsheep <small>Marketing</small></a>
+        <p>Marketing and websites for Australian businesses, powered by AI. Same budget, a lot more done.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/google-ads">Google Ads</a></li>
+          <li><a href="/services/seo-ai-search">SEO and AI Search</a></li>
+          <li><a href="/services/social-content">Social and Content</a></li>
+          <li><a href="/services/websites">Websites</a></li>
+          <li><a href="/services/ai-automations">AI Automations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/case-studies">Case studies</a></li>
+          <li><a href="#book">Book a Strategy Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partner</h4>
+        <ul>
+          <li><a href="https://mindsheeplabs.com">Mindsheep Labs</a></li>
+          <li><a href="mailto:hello@mindsheep.com.au">hello@mindsheep.com.au</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mindsheep Marketing. Perth, Western Australia.</span>
+      <span><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var btn = nav.querySelector('.nav-toggle');
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+  nav.querySelectorAll('.nav-mobile a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth >= 900) setOpen(false); });
+})();
+</script>
+</body>
+</html>

@@ -1,304 +1,296 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import ContactSection from "../components/ContactSection";
+import Topbar from "../components/Topbar";
+import StoryHead from "../components/StoryHead";
+import CtaCard from "../components/CtaCard";
+import Faq from "../components/Faq";
+import Others from "../components/Others";
+import Close from "../components/Close";
+import Drawer from "./Drawer";
+import styles from "./page.module.css";
 
-const caseStudies = [
-  {
-    id: "aldott-homes",
-    logo: "/clients/aldott-homes.webp",
-    logoWidth: 140,
-    logoHeight: 42,
-    client: "Aldott Homes",
-    stat: "385",
-    statSuffix: " leads/mo",
-    headline: "From zero to 385 leads/month in just 6 months",
-    industry: "Home Building",
-    services: "Google Ads · AI Landing Pages",
-    avatar: "/clients/denes.jpg",
-    author: "Denes",
-    authorRole: "Director, Aldott Homes",
-    challenge:
-      "Aldott Homes came to us with no digital marketing presence and a brand-new website. They were relying entirely on word-of-mouth referrals in a competitive home building market and needed a scalable, predictable lead pipeline — fast.",
-    solution:
-      "We built a full Google Ads account from scratch, launching Search and Performance Max campaigns targeting buyers actively searching for custom home builders in their area. Alongside this, we deployed AI-generated landing pages optimised for each campaign theme, with A/B testing baked in from day one. We tracked every lead through to qualified opportunity and used that data to continuously sharpen our targeting.",
-    results: [
-      { value: "385", label: "Leads per month" },
-      { value: "6mo", label: "Time to reach target" },
-      { value: "0", label: "Starting lead volume" },
-      { value: "↑", label: "Still growing" },
-    ],
-    quote:
-      "We are now constantly growing. Be prepared — it will take off quicker than you think.",
-  },
+export const metadata = {
+  title: "Case studies",
+  description:
+    "Real results for Australian businesses. Aldott Homes, WillShip, Highline Sheds, WestCoast HiFi and Progressive Car Sound: more leads, less wasted spend and every enquiry handled, on the same budget.",
+  alternates: { canonical: "/case-studies" },
+};
+
+/* ------------------------------------------------------------------ data */
+
+const CASES = [
   {
     id: "willship",
-    logo: "/clients/willship-logo.webp",
-    logoWidth: 140,
-    logoHeight: 28,
-    client: "Willship International",
-    stat: "2.07x",
-    statSuffix: " leads",
-    headline: "2.07× lead increase with 40.7% cost reduction in 4 months",
-    industry: "Freight Forwarding",
-    services: "Google Ads · AI Analytics",
-    avatar: "/clients/nick.png",
-    author: "Nick",
-    authorRole: "Director, Willship International",
+    lead: true,
+    client: "WillShip International",
+    face: { src: "/clients/nick.png", alt: "Nick Proctor of WillShip International.", w: 150, h: 150 },
+    kicker: "WillShip International · Freight and vehicle shipping",
+    title: "Every enquiry arrives complete and quoted",
+    body:
+      "Freight quotes depend on detail, and every one used to start with a form and a phone call. We built two AI chat assistants, an instant-quote wizard and a new site around them.",
+    result: "Two assistants, one quote wizard, a new site. Every enquiry complete and quoted.",
     challenge:
-      "Willship had been running Google Ads with another agency but was seeing flat or declining lead volumes at rising costs. The account had grown bloated over the years — lots of campaigns, lots of spend, but no clear attribution or optimisation logic.",
-    solution:
-      "We performed a full campaign restructure, cutting wasted spend, rebuilding ad group architecture around intent signals, and layering in AI analytics to surface the keywords and audiences driving actual qualified leads. Within the first month, cost-per-lead dropped sharply as we redirected budget to what was actually converting.",
-    results: [
-      { value: "2.07×", label: "Lead volume increase" },
-      { value: "40.7%", label: "Cost reduction" },
-      { value: "4mo", label: "Time to achieve" },
-      { value: "↓", label: "CPL still trending down" },
+      "Freight and vehicle quotes depend on what, where from, where to, how big and how soon. Nick had built a prototype chatbot himself and could see what it could become. The website sat on an old framework, every change needed a developer, and leads came in half finished, so the sales team spent its day chasing details before it could quote.",
+    built: [
+      {
+        name: "Alex, the freight chatbot.",
+        text: "We took Nick’s prototype and made it a commercial system. It qualifies every freight lead in the chat and lands it in the sales system.",
+      },
+      {
+        name: "Sam, the automotive chatbot.",
+        text: "An instant-quote wizard behind it prices the 23 variables that set vehicle shipping and returns a real quote during the chat.",
+      },
+      {
+        name: "Bot-to-deal tracking.",
+        text: "Every chat lead is followed through to the deal it became, so WillShip can see which conversations turn into revenue.",
+      },
+      {
+        name: "A full site migration.",
+        text: "A current platform with a self-serve AI editing system: change a page, publish it, undo it if needed.",
+      },
+      {
+        name: "A Get Started funnel.",
+        text: "Inside Alex: who you are, what you need, an instant quote, then chat, a written enquiry, a callback or a director call.",
+      },
     ],
-    quote:
-      "I'd definitely recommend Mindsheep to anyone looking for a marketing partner.",
+    results: [
+      { value: "5", label: "systems built, all live and in use" },
+      { value: "23", label: "pricing variables handled in the chat, so no phone call to quote" },
+    ],
+    outcomes: [
+      "Every enquiry arrives complete and quoted before the sales team sees it",
+      "A website the team updates themselves",
+    ],
+    quote: "Great work on the whole project mate, you have done an amazing job. I have just flicked it live.",
+    cite: "Nick Proctor, WillShip International",
+  },
+  {
+    id: "aldott-homes",
+    client: "Aldott Homes",
+    face: { src: "/clients/denes.jpg", alt: "Denes, Director of Aldott Homes.", w: 90, h: 90 },
+    kicker: "Aldott Homes · Home building",
+    title: "From zero to 385 leads a month",
+    body:
+      "A new builder with a new website and no marketing. We built their Google Ads from scratch and used AI to generate a landing page for every campaign, each matched to its ad.",
+    result: "385 leads a month within 6 months, from zero.",
+    challenge:
+      "Aldott Homes had a new website and no digital marketing. Every job came from word of mouth, in a competitive home building market. They needed a steady flow of enquiries, and they needed it quickly.",
+    built:
+      "A Google Ads account built from scratch, aimed at people actively looking for a builder. For each campaign, an AI-generated landing page made from Aldott’s own homes and words, matched to its ad.",
+    results: [
+      { value: "385", label: "leads a month" },
+      { value: "0", label: "leads a month when we started" },
+      { value: "6", label: "months to get there" },
+    ],
+    quote: "We are now constantly growing. Be prepared, it will take off quicker than you think.",
+    cite: "Denes, Director, Aldott Homes",
   },
   {
     id: "highline-sheds",
-    logo: "/clients/highline-sheds.webp",
-    logoWidth: 140,
-    logoHeight: 45,
     client: "Highline Sheds",
-    stat: "2.09x",
-    statSuffix: " leads",
-    headline: "2.09× lead increase with 30.5% cost reduction in 3 months",
-    industry: "Sheds & Construction",
-    services: "Google Ads · SEO",
-    avatar: "/clients/steve.jpg",
-    author: "Steve",
-    authorRole: "Owner, Highline Sheds",
+    face: { src: "/clients/steve.jpg", alt: "Steve, Owner of Highline Sheds.", w: 90, h: 90 },
+    kicker: "Highline Sheds · Sheds and construction",
+    title: "Twice the leads, 30 percent less cost",
+    body:
+      "Highline was paying too much for every enquiry. We restructured their Google Ads so the spend lands on the right searches, and added SEO underneath, so Highline shows up twice for the searches that matter.",
+    result: "2.09 times the leads at 30.5 percent lower cost, in 3 months.",
     challenge:
-      "Highline Sheds had strong word-of-mouth but needed to scale beyond referrals. Their Google Ads were running but underperforming — high spend, low conversion rates, and no SEO foundation to capture organic demand in a market where people are actively searching.",
-    solution:
-      "We restructured their Google Ads from the ground up, implementing granular match type strategies and removing wasted spend on irrelevant search terms. In parallel, we launched an SEO programme targeting high-intent shed and garage keywords, ensuring they owned both the paid and organic real estate for their most valuable searches.",
+      "Highline had strong word of mouth and wanted to grow past it. Google Ads was running but underperforming: high spend, low conversion, and nothing on the organic side in a market where people search before they buy.",
+    built:
+      "We rebuilt Google Ads from the ground up so each ad only shows for the searches it fits, and cut the spend going to the wrong ones. Our own system watches the account every hour and flags drift before it costs money. Alongside it, SEO on the high-intent shed searches, so Highline appears in the paid and the organic results.",
     results: [
-      { value: "2.09×", label: "Lead volume increase" },
-      { value: "30.5%", label: "Cost reduction" },
-      { value: "3mo", label: "Time to achieve" },
-      { value: "Top 3", label: "Organic rankings gained" },
+      { value: "2.09x", label: "the leads" },
+      { value: "30.5%", label: "lower cost per lead" },
+      { value: "3", label: "months to get there" },
+      { value: "Top 3", label: "organic rankings gained" },
     ],
-    quote:
-      "You are doing too well! We are flat out with inquiries!",
+    quote: "You are doing too well. We are flat out with inquiries.",
+    cite: "Steve, Owner, Highline Sheds",
   },
   {
     id: "westcoast-hifi",
-    logo: "/clients/westcoast-hifi.svg",
-    logoWidth: 160,
-    logoHeight: 42,
     client: "WestCoast HiFi",
-    stat: "40%",
-    statSuffix: " faster",
-    headline: "40% speed increase powering e-commerce sales growth",
-    industry: "Consumer Electronics",
-    services: "Shopify · Google Shopping",
-    avatar: "/clients/michael.jpg",
-    author: "Michael",
-    authorRole: "Director, WestCoast HiFi",
+    face: { src: "/clients/michael.jpg", alt: "Michael, Director of WestCoast HiFi.", w: 90, h: 90 },
+    kicker: "WestCoast HiFi · Consumer electronics",
+    title: "A faster store, more sales",
+    body:
+      "A retailer going hard at online sales, with a slow Shopify store. We rebuilt the store for speed and restructured Google Shopping so the budget flows to the products that pay.",
+    result: "40 percent faster, with sales and return on ad spend up.",
     challenge:
-      "WestCoast HiFi is an established consumer electronics retailer moving aggressively into e-commerce. A slow, technically bloated Shopify store was hurting conversion rates and Google Shopping performance, while their ad campaigns lacked the structure to compete with major retailers.",
-    solution:
-      "We overhauled their Shopify store with a focus on Core Web Vitals and page speed, resulting in a 40% speed improvement that directly improved Google's quality scores and user experience metrics. We then restructured their Google Shopping campaigns with smarter product feed optimisation and segmented campaign structures, allowing budget to flow to the highest-margin products.",
-    results: [
-      { value: "40%", label: "Page speed increase" },
-      { value: "↑", label: "E-commerce sales growing" },
-      { value: "↑", label: "Google Shopping ROAS" },
-      { value: "↓", label: "Bounce rate" },
-    ],
-    quote:
-      "Reliability and Trust is what David & the team provide for us — we know we are in safe hands.",
+      "An established retailer moving hard into online sales. The Shopify store was slow and heavy, which hurt conversion and Google Shopping performance, and the campaigns did not have the structure to compete with the big retailers.",
+    built:
+      "We rebuilt the Shopify store for speed, a 40 percent gain on page load. Then we restructured Google Shopping so the budget flows to the products that make money instead of spreading thinly across the whole range.",
+    results: [{ value: "40%", label: "faster pages" }],
+    outcomes: ["Online sales up", "Return on ad spend up"],
+    quote: "Reliability and Trust is what David and the team provide for us. We know we are in safe hands.",
+    cite: "Michael, Director, WestCoast HiFi",
+  },
+  {
+    id: "progressive-car-sound",
+    client: "Progressive Car Sound",
+    logo: { src: "/clients/progressive-audio.png", alt: "Progressive Car Sound", w: 368, h: 92 },
+    kicker: "Progressive Car Sound · Car audio retail",
+    title: "$3,500 in the first 6 weeks",
+    body:
+      "A new website and a Google Ads campaign launched together, with every sale tracked back to the click that started it. The question was whether online would pay for itself. The answer was a number.",
+    result: "3,500 dollars of revenue in the first 6 weeks, from a standing start.",
+    challenge:
+      "Progressive Car Sound needed a website and a way to bring customers to it. The question was a fair one: would online pay for itself, and how fast?",
+    built:
+      "A new website built from their own products and photos, and a Google Ads campaign launched alongside it. Every sale is tracked back to the click that started it, so the answer to the question is a number, not a guess.",
+    results: [{ value: "$3,500", label: "revenue in the first 6 weeks" }],
   },
 ];
 
-function ChevronIcon() {
+const FAQS = [
+  {
+    q: "Are these numbers real?",
+    a: "Yes. Every figure is from a client account we run or a system we built. Where a client has not given us a number to publish, we say up or down and leave it there. We do not project, round up or borrow from industry averages.",
+  },
+  {
+    q: "Will this work in my industry?",
+    a: "The businesses on this page build homes, ship freight, sell sheds and sell hi-fi. The method is the same: start from your numbers, build from your own photos and words, test more than one version, watch the account every hour. If we do not think it will work for you, we will say so.",
+  },
+  {
+    q: "How long before I see something?",
+    a: "Google Ads usually moves in the first month. Highline took 3 months and Aldott took 6. SEO is slower. Websites and chat agents are measured in weeks. You get the timeline before you spend anything.",
+  },
+  {
+    q: "Do I need to understand the AI side?",
+    a: "No. We set it up and run it. You see the result in leads, sales and hours back. If you want to know how something works, we will explain it in plain words, but you never have to.",
+  },
+];
+
+/* --------------------------------------------------------------- pieces */
+
+function Results({ items, outcomes = [] }) {
   return (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="2 4 6 8 10 4" />
-    </svg>
+    <>
+      <ul className={styles.results}>
+        {items.map((r) => (
+          <li key={r.label} className={styles.result}>
+            <div className={styles.rv}>{r.value}</div>
+            <div className={styles.rl}>{r.label}</div>
+          </li>
+        ))}
+      </ul>
+      {outcomes.length ? (
+        <ul className={styles.outcomes}>
+          {outcomes.map((o) => (
+            <li key={o}>{o}</li>
+          ))}
+        </ul>
+      ) : null}
+    </>
   );
 }
 
-function CaseStudyCard({ study }) {
-  const [open, setOpen] = useState(false);
+function Built({ built }) {
+  if (Array.isArray(built)) {
+    return (
+      <ul className={styles.list}>
+        {built.map((b) => (
+          <li key={b.name}>
+            <b>{b.name}</b> {b.text}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  return <p>{built}</p>;
+}
 
+function StudyCard({ c }) {
+  const cls = [styles.cs, c.lead ? styles.lead : ""].filter(Boolean).join(" ");
   return (
-    <div
-      className={`glass-panel p-8 case-study-card${open ? " expanded" : ""}`}
-      onClick={() => setOpen((o) => !o)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && setOpen((o) => !o)}
-      aria-expanded={open}
-    >
-      {/* Header — always visible */}
-      <div className="case-logo-wrap">
-        <Image
-          src={study.logo}
-          alt={study.client}
-          width={study.logoWidth}
-          height={study.logoHeight}
-          className="client-logo"
-          style={{ opacity: 0.85, filter: "brightness(0) invert(1)" }}
-        />
-      </div>
-
-      <div className="case-study-stat">
-        {study.stat}
-        <span style={{ fontSize: "1.25rem", fontWeight: 600, background: "none", WebkitTextFillColor: "inherit" }}>
-          {study.statSuffix}
-        </span>
-      </div>
-      <p className="case-study-headline">{study.headline}</p>
-
-      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-        <span className="industry-tag">{study.industry}</span>
-        <span className="industry-tag" style={{ background: "rgba(6,182,212,0.08)", borderColor: "rgba(6,182,212,0.2)" }}>
-          {study.services}
-        </span>
-      </div>
-
-      <div className="expand-toggle">
-        <span className={`expand-toggle-icon${open ? " rotated" : ""}`}>
-          <ChevronIcon />
-        </span>
-        {open ? "Collapse" : "View full case study"}
-      </div>
-
-      {/* Expanded content */}
-      <div className={`case-study-expanded${open ? " open" : ""}`}>
-        <hr className="expanded-divider" />
-
-        <div style={{ display: "grid", gap: "1.5rem" }}>
-          <div>
-            <p
-              className="included-heading"
-              style={{ marginTop: 0 }}
-            >
-              The Challenge
-            </p>
-            <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: "1.75" }}>
-              {study.challenge}
-            </p>
-          </div>
-          <div>
-            <p className="included-heading" style={{ marginTop: 0 }}>
-              Our Solution
-            </p>
-            <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: "1.75" }}>
-              {study.solution}
-            </p>
-          </div>
-          <div>
-            <p className="included-heading" style={{ marginTop: 0 }}>
-              Results
-            </p>
-            <div className="result-grid">
-              {study.results.map((r, i) => (
-                <div className="result-item" key={i}>
-                  <div className="result-value">{r.value}</div>
-                  <div className="result-label">{r.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="case-study-quote">
-          <p style={{ fontSize: "0.95rem", color: "#e2e8f0", fontStyle: "italic", lineHeight: "1.7", marginBottom: "0.75rem" }}>
-            &ldquo;{study.quote}&rdquo;
-          </p>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+    <li className={cls} id={c.id}>
+      <article aria-labelledby={`${c.id}-title`}>
+        <div className={styles.head}>
+          {c.face ? (
             <Image
-              src={study.avatar}
-              alt={study.author}
-              width={40}
-              height={40}
-              className="testimonial-avatar"
-              style={{ width: "40px", height: "40px" }}
+              className={styles.face}
+              src={c.face.src}
+              alt={c.face.alt}
+              width={c.face.w}
+              height={c.face.h}
+              sizes="104px"
             />
-            <div>
-              <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "#e2e8f0", marginBottom: 0 }}>
-                {study.author}
-              </p>
-              <p style={{ fontSize: "0.8rem", color: "#6b7280", marginBottom: 0 }}>
-                {study.authorRole}
-              </p>
-            </div>
+          ) : (
+            <span className={styles.logoTile}>
+              <Image src={c.logo.src} alt={c.logo.alt} width={c.logo.w} height={c.logo.h} sizes="104px" />
+            </span>
+          )}
+          <div className={styles.text}>
+            <span className={styles.kicker}>{c.kicker}</span>
+            <h2 className={styles.t} id={`${c.id}-title`}>
+              {c.title}
+            </h2>
+            <p className={styles.p}>{c.body}</p>
+            <p className={styles.r}>{c.result}</p>
           </div>
         </div>
-      </div>
-    </div>
+
+        <Drawer id={c.id} defaultOpen={Boolean(c.lead)} openLabel="Read the full story" closeLabel="Close the story">
+          <div className={styles.block}>
+            <h3 className={styles.k}>The challenge</h3>
+            <p>{c.challenge}</p>
+          </div>
+          <div className={styles.block}>
+            <h3 className={styles.k}>What we built</h3>
+            <Built built={c.built} />
+          </div>
+          <div className={styles.block}>
+            <h3 className={styles.k}>Results</h3>
+            <Results items={c.results} outcomes={c.outcomes} />
+          </div>
+          {c.quote ? (
+            <blockquote className={styles.quote}>
+              <p>{c.quote}</p>
+              <cite>{c.cite}</cite>
+            </blockquote>
+          ) : null}
+        </Drawer>
+      </article>
+    </li>
   );
 }
+
+/* ---------------------------------------------------------------- page */
 
 export default function CaseStudiesPage() {
   return (
     <>
-      <div className="bg-glow" />
-      <NavBar />
+      <Topbar />
 
       <main>
-        {/* Hero */}
-        <section className="container page-hero reveal">
-          <p
-            className="text-sm font-semibold uppercase tracking-wide mb-4"
-            style={{ color: "var(--secondary)" }}
-          >
-            Proof of work
-          </p>
-          <h1>
-            Real businesses. <span className="text-gradient">Real numbers.</span>
-          </h1>
-          <p className="page-hero-desc mt-4">
-            Every result below is from a real client engagement — the kind of growth we deliver when AI-powered marketing and development is done properly. No cherry-picking, no projections, no stock photos of handshakes.
-          </p>
-        </section>
+        <article className="story">
+          <div className="plate">
+            <StoryHead
+              kicker="Case studies"
+              title="Real businesses. Real numbers."
+              lead="Every figure here is from a client account we run or a system we built. No projections, no averages. Builders, freight, sheds and retail, across Australia."
+            />
+            <ol className="cases">
+              {CASES.map((c) => (
+                <StudyCard key={c.id} c={c} />
+              ))}
+              <CtaCard body="A free 30 minute look at your ads, your site and your content, then real, practical ways to get more from the same budget." />
+            </ol>
+          </div>
+        </article>
 
-        {/* Case Study Cards */}
-        <section className="container py-8 pb-20">
-          <div className="grid md:grid-cols-2 gap-8">
-            {caseStudies.map((study) => (
-              <CaseStudyCard key={study.id} study={study} />
-            ))}
+        <section className={`ways ${styles.faqSection}`} id="faq">
+          <div className="plate">
+            <div className="ways__head">
+              <h2 className="sc-display sc-display--md">Fair questions</h2>
+              <p>Short answers. The longer ones happen on the call, with your numbers on the table.</p>
+            </div>
+            <Faq items={FAQS} openFirst />
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="container py-8 pb-20 reveal">
-          <div
-            className="glass-panel p-10 md:p-16 text-center"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(79,70,229,0.08) 0%, rgba(6,182,212,0.06) 100%)",
-              borderColor: "rgba(79,70,229,0.2)",
-            }}
-          >
-            <h2 className="mb-4">
-              Want results <span className="text-gradient">like these?</span>
-            </h2>
-            <p
-              className="max-w-2xl mx-auto mb-8"
-              style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: "1.8" }}
-            >
-              Every story above started with a 30-minute call. No pitch, no jargon — we look at where you are and point out the one or two moves that would make the biggest difference.
-            </p>
-            <a href="/#contact" className="btn btn-primary">
-              Book a Strategy Call
-            </a>
-          </div>
-        </section>
-
-        <ContactSection />
+        <Others title="The services behind these results" />
+        <Close />
       </main>
-
-      <Footer />
     </>
   );
 }

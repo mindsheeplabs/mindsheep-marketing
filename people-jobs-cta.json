@@ -1,0 +1,15 @@
+{
+  "out_dir": "C:/Users/idead/Desktop/mindsheep labs/website/design-previews/shots/people-cta",
+  "size": "1024x1024",
+  "format": "webp",
+  "max_parallel": 2,
+  "skip_existing": false,
+  "style": "\n\nStyle: a real photograph taken on a phone by a friend, natural daylight, slightly imperfect framing, slight film grain, warm tone, shallow depth of field. Not polished, not a studio shoot, not a model, natural skin texture. Square 1:1 framing with the whole head and shoulders inside the frame and clear space around the head, because it will be cropped to a circle. No text, no logos, no watermark.",
+  "jobs": [
+    {
+      "name": "owner-cta",
+      "n": 2,
+      "prompt": "Scene: behind the counter of a small Australian business, a bakery or cafe or hardware store, bright daylight through the shopfront window, shelves and products softly out of focus.\nSubject: an Australian woman in her late 30s to mid 40s who owns the place, in a plain tee with an apron, hair tied back loosely.\nDetails: caught mid-laugh, genuinely delighted, arms crossed and resting on the counter, leaning slightly toward the camera.\nConstraints: candid and joyful, not posed; ordinary business owner, not a model; head and shoulders centred with room above."
+    }
+  ]
+}

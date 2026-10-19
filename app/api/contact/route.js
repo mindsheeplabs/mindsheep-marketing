@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-// Instantiated per-request, not at module scope — the build must not require secrets.
+// Instantiated per request, not at module scope, so the build does not need secrets.
 function getResend() {
   const key = process.env.RESEND_API_KEY;
   if (!key) return null;
@@ -38,15 +38,15 @@ export async function POST(req) {
 
     const budgetLabels = {
       under5k: "Under $5,000",
-      "5k-15k": "$5,000 – $15,000",
-      "15k-50k": "$15,000 – $50,000",
+      "5k-15k": "$5,000 to $15,000",
+      "15k-50k": "$15,000 to $50,000",
       "50k+": "$50,000+",
     };
 
     const { data, error } = await resend.emails.send({
       from: `${BRAND} <david@mindsheep.com.au>`,
       to: ["david@mindsheep.com.au"],
-      subject: `New Lead: ${name} — ${BRAND}`,
+      subject: `New lead: ${name}, ${BRAND}`,
       replyTo: email,
       html: `
         <h2>New enquiry from mindsheep.com.au</h2>
