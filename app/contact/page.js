@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Topbar />
 
       <main>
-        <article className="story" id="contact">
+        <article className="story story--contact" id="contact">
           <div className="plate">
             <StoryHead
               kicker="Contact"

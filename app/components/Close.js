@@ -58,15 +58,8 @@ export default function Close({
             </p>
           ))}
           <Link href="/" className="close__brand" aria-label="Mindsheep Marketing Australia home">
-            <Image
-              className="close__mark mark--dark"
-              src="/MINDSHEEP%20LOGO.svg"
-              width={133}
-              height={26}
-              alt="Mindsheep"
-              unoptimized
-            />
-            <span className="brand__word">Marketing Australia</span>
+            <Image className="mark mark--dark" src="/mindsheep-mark.svg" width={30} height={30} alt="" unoptimized />
+            <span className="brand__text"><span className="brand__name">Mindsheep</span><span className="brand__word">Marketing Australia</span></span>
           </Link>
           <nav className="close__nav" aria-label="Site">
             {links.map((l) => (

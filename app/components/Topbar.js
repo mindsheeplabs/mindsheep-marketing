@@ -20,16 +20,8 @@ export default function Topbar({ cta = "Free AI marketing assessment", ctaShort 
     <header className="topbar">
       <div className="plate topbar__in">
         <Link href="/" className="brand" aria-label="Mindsheep Marketing Australia home">
-          <Image
-            className="mark mark--dark"
-            src="/MINDSHEEP%20LOGO.svg"
-            width={154}
-            height={30}
-            alt="Mindsheep"
-            priority
-            unoptimized
-          />
-          <span className="brand__word">Marketing Australia</span>
+          <Image className="mark mark--dark" src="/mindsheep-mark.svg" width={30} height={30} alt="" unoptimized />
+          <span className="brand__text"><span className="brand__name">Mindsheep</span><span className="brand__word">Marketing Australia</span></span>
         </Link>
         <a className="btn btn--accent btn--sm" href="/contact" data-book>
           <span className="cta-long">{cta}</span>

@@ -55,3 +55,6 @@ people-jobs*.results.json
 
 # design preview screenshots (regenerable)
 design-previews/shots/
+
+# judge screenshots (regenerable)
+design-previews/_judge-shots/
