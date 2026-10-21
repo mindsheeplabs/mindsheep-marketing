@@ -98,8 +98,9 @@ export default function Page() {
               >
                 <p>
                   Highline Sheds was paying too much for every enquiry. We restructured their Google
-                  Ads and added SEO on the shed searches people make when ready to buy. Top three
-                  Google rankings followed.
+                  Ads and added an AI SEO campaign on the shed searches people make when ready to buy.
+                  Top three Google rankings followed, and Highline is being found for more searches
+                  every month.
                 </p>
                 <p>
                   <b>2.09 times the leads at 30.5 percent lower cost, in three months.</b>{" "}

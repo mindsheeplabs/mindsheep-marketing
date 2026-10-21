@@ -107,15 +107,16 @@ export default function AiWebsitesPage() {
                 }}
               >
                 <p>
-                  <b>WestCoast HiFi:</b> Shopify store rebuilt 40 percent faster. Sales up.
+                  <b>WestCoast HiFi:</b> Shopify store rebuilt 40 percent faster. Sales up. Now rolling
+                  out whole new pages with AI design and copy, in their own brand.
                 </p>
                 <p>
                   <b>Progressive Car Sound:</b> $3,500 in sales in six weeks from a new site and
                   ads.
                 </p>
                 <p>
-                  <b>WillShip International:</b> a full rebuild with self-serve AI editing, so the
-                  team changes pages themselves.
+                  <b>WillShip International:</b> a full rebuild on an AI admin system, so the team
+                  changes, tests and rolls out pages themselves.
                 </p>
                 <ul className={styles.logos} aria-label="Clients">
                   {LOGOS.map((logo) => (

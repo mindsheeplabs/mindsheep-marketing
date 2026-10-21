@@ -99,8 +99,8 @@ export default function AiGoogleAdsPage() {
                 }}
               >
                 <p>
-                  <b>Aldott Homes:</b> zero to 385 leads a month in six months, with an AI-generated
-                  landing page per campaign.
+                  <b>Aldott Homes:</b> zero to 385 leads a month in six months, from an account built
+                  from scratch.
                 </p>
                 <p>
                   <b>Highline Sheds:</b> 2.09 times the leads at 30.5 percent lower cost, in three

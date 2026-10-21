@@ -34,7 +34,7 @@ export const DEFAULT_LINKS = [
 ];
 
 export default function Close({
-  lead = "Mindsheep Marketing Australia. We use AI across everything we do, so the same budget buys you more. You do not need to know how it works. You see it in the numbers.",
+  lead = "Mindsheep Marketing Australia. We put AI to work across everything we do. The same budget buys you more, the work lands faster, and the results are better.",
   cta = "Book your free AI marketing assessment",
   lines = DEFAULT_LINES,
   links = DEFAULT_LINKS,

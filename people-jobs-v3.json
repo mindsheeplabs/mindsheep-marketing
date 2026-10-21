@@ -1,0 +1,20 @@
+{
+  "out_dir": "C:/Users/idead/Desktop/mindsheep labs/website/design-previews/shots/people-v3",
+  "size": "1024x1280",
+  "format": "webp",
+  "max_parallel": 3,
+  "skip_existing": false,
+  "style": "\n\nStyle: a real photograph taken on a phone by a colleague, natural daylight, slightly imperfect framing, slight film grain, warm tone, shallow depth of field. Not a studio shoot, not a stock model, natural skin texture, hair tidy but not styled for a shoot. Clean, well-kept, presentable. Keep the person centred with clear space above the head and around the shoulders. No text, no logos, no watermark.",
+  "jobs": [
+    {
+      "name": "exec-woman",
+      "n": 2,
+      "prompt": "Scene: a bright modern office in Perth, Australia, large window with soft daylight, a laptop and a notebook on a clean desk, a plant and city buildings softly out of focus behind.\nSubject: an Australian woman in her late 30s who runs the business; smart casual: a plain cream or soft-blue blouse or a fine knit, no blazer needed, small earrings, hair down and tidy.\nDetails: sitting at the desk, turned toward the camera mid-conversation with a warm, confident, easy smile; one hand resting on the laptop; relaxed and capable.\nConstraints: candid, not posed; a real business owner, not a model; clean and well-groomed; no suit, no corporate stiffness; head and shoulders framed with room above."
+    },
+    {
+      "name": "exec-man",
+      "n": 2,
+      "prompt": "Scene: a bright, tidy office or meeting room in Australia, soft daylight, a laptop and a coffee on a light timber table, a glass wall and greenery out of focus behind.\nSubject: an Australian man in his late 30s to early 40s who runs the business; casual executive: an open-collar pale shirt with the sleeves rolled, or a fine navy knit over a tee, clean shaven or neat short beard, hair neat.\nDetails: leaning slightly forward with his forearms on the table, looking at the camera with an open, friendly, assured expression, as if listening; clean, fresh, put together.\nConstraints: candid and unposed; not rough, not dusty, not weathered, not a tradesman; no suit, no tie; natural skin, no retouching; head and shoulders framed with room above."
+    }
+  ]
+}

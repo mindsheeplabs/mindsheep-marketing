@@ -20,7 +20,7 @@ import Link from "next/link";
  *   face={{ src: "/clients/denes.jpg", alt: "Denes, Director of Aldott Homes" }}
  *   kicker="Case study · Aldott Homes"
  *   title="From zero to 385 leads a month"
- *   body="Google Ads built from scratch, with an AI landing page for every campaign."
+ *   body="Google Ads built from scratch, aimed at people already looking for a builder."
  *   result="385 enquiries a month within six months, still growing."
  * />
  */

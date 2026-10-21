@@ -17,19 +17,23 @@ export const metadata = {
 const TICKS = [
   "More leads from the same ad spend.",
   "Found on Google and in AI search.",
-  "Fresh content every week, from your photos.",
-  "A website built from what you have.",
+  "AI images and UGC videos from your own photos.",
+  "A new website designed and live in weeks, for less.",
   "Every enquiry answered in minutes.",
 ];
 
 const FACES = [
   {
-    src: "/people/owner-office.webp",
-    alt: "A business owner at a desk in a small office, phone in hand.",
+    src: "/people/owner-exec-woman.webp",
+    alt: "A business owner at her desk in a Perth office, smiling.",
   },
   {
     src: "/people/owner-coffee.webp",
     alt: "A business owner behind the counter of her shop, holding a coffee.",
+  },
+  {
+    src: "/people/owner-exec-man.webp",
+    alt: "A business owner at a meeting table, listening.",
   },
   {
     src: "/people/owner-workshop.webp",
@@ -77,22 +81,22 @@ const SERVICES = [
 
 const CASES = [
   {
-    href: "/case-studies#aldott-homes",
-    face: { src: "/clients/denes.jpg", alt: "Denes, Director of Aldott Homes.", width: 90, height: 90 },
-    kicker: "Case study · Aldott Homes",
-    title: "From zero to 385 leads a month",
-    body:
-      "Aldott Homes had no lead flow. We built their Google Ads from scratch and used AI to generate a landing page for every campaign, each one matched to the ad that brought the visitor.",
-    result: "385 enquiries a month within six months, still growing.",
-  },
-  {
     href: "/case-studies#willship",
     face: { src: "/clients/nick.png", alt: "Nick Proctor of WillShip International." },
     kicker: "Case study · WillShip International",
-    title: "Quoting in seconds",
+    title: "A website they run themselves",
     body:
-      "Their customers ask detailed shipping questions all day. We built a website assistant that asks what an estimator would ask, prices the job on the spot and passes each enquiry to the team already quoted.",
-    result: "Every enquiry arrives complete and quoted, before anyone picks up the phone.",
+      "Every change to WillShip's site used to need a developer. We rebuilt it on an AI admin system their team controls: change a page, test it, roll it out, roll it back. The same system quotes vehicle shipping on the spot and hands each enquiry over complete.",
+    result: "The team ships their own changes. Every enquiry arrives complete and quoted.",
+  },
+  {
+    href: "/case-studies#westcoast-hifi",
+    face: { src: "/clients/michael.jpg", alt: "Michael, Director of WestCoast HiFi.", width: 90, height: 90 },
+    kicker: "Case study · WestCoast HiFi",
+    title: "A faster store, now with AI-built pages",
+    body:
+      "WestCoast HiFi's Shopify store was slow. We rebuilt it for speed and restructured Google Shopping. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on their brand and their own words.",
+    result: "40 percent faster. Sales and return on ad spend up. New pages shipping now.",
   },
   {
     href: "/case-studies#highline-sheds",
@@ -100,17 +104,17 @@ const CASES = [
     kicker: "Case study · Highline Sheds",
     title: "Twice the leads, 30 percent less cost",
     body:
-      "Highline Sheds was paying too much for every enquiry. We restructured their Google Ads and added SEO, with our own system watching the account every hour and adjusting while it mattered.",
+      "Highline Sheds was paying too much for every enquiry. We restructured their Google Ads, with our own system watching the account every hour. Now an AI SEO campaign is getting them found for more searches every month.",
     result: "2.09 times the leads at 30.5 percent lower cost, in three months.",
   },
   {
-    href: "/case-studies#westcoast-hifi",
-    face: { src: "/clients/michael.jpg", alt: "Michael, Director of WestCoast HiFi.", width: 90, height: 90 },
-    kicker: "Case study · WestCoast HiFi",
-    title: "A faster store, more sales",
+    href: "/case-studies#aldott-homes",
+    face: { src: "/clients/denes.jpg", alt: "Denes, Director of Aldott Homes.", width: 90, height: 90 },
+    kicker: "Case study · Aldott Homes",
+    title: "From zero to 385 leads a month",
     body:
-      "WestCoast HiFi's Shopify store was slow. We rebuilt it for speed and restructured Google Shopping so every product had a fair shot at the sale.",
-    result: "40 percent faster. Sales and return on ad spend up.",
+      "A new builder with a new website and no marketing. We built their Google Ads from scratch, aimed at people already looking for a builder, and kept tightening it month by month.",
+    result: "385 enquiries a month within six months, still growing.",
   },
 ];
 

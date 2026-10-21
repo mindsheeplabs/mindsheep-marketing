@@ -79,15 +79,15 @@ export default function Plan({
               </div>
             </li>
           ))}
-          {cta ? (
-            <li className="plan__cta">
-              <a className="btn btn--accent" href="/contact" data-book>
-                {cta.label}
-              </a>
-              {cta.note ? <span className="sc-label">{cta.note}</span> : null}
-            </li>
-          ) : null}
         </ol>
+        {cta ? (
+          <div className="plan__cta">
+            <a className="btn btn--accent" href="/contact" data-book>
+              {cta.label}
+            </a>
+            {cta.note ? <span className="sc-label">{cta.note}</span> : null}
+          </div>
+        ) : null}
       </div>
     </section>
   );
