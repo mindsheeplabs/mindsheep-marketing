@@ -10,6 +10,7 @@ ol.steps {
   display: grid;
   gap: var(--sc-2);
 }
+ol.steps li b { color: var(--sc-ink); font-weight: 500; }
 ol.steps li::marker {
   color: var(--sc-accent);
   font-weight: 500;

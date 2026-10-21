@@ -1,0 +1,117 @@
+/* AI search and visibility: the before-and-now search figure.
+   Two small "screens" side by side on wide screens, stacked on phones. */
+
+.shift {
+  margin: var(--sc-5) 0 var(--sc-5);
+  display: grid;
+  gap: var(--sc-5);
+}
+@media (min-width: 640px) {
+  .shift {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.panel {
+  display: grid;
+  gap: var(--sc-3);
+  align-content: start;
+}
+
+.label {
+  font-size: var(--sc-t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sc-ink-soft);
+  font-weight: 500;
+}
+.panel:last-child .label {
+  color: var(--sc-accent);
+}
+
+.screen {
+  border: 1px solid var(--sc-hairline-strong);
+  border-radius: var(--sc-r-md);
+  background: #ffffff;
+  padding: var(--sc-4);
+  display: grid;
+  gap: var(--sc-4);
+  box-shadow: var(--sc-e1);
+  font-size: var(--sc-t-sm);
+}
+
+.bar {
+  border: 1px solid var(--sc-hairline-strong);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  color: var(--sc-ink);
+  background: var(--sc-surface);
+}
+.bar::before {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 0.6em;
+  border: 2px solid var(--sc-ink-soft);
+  border-radius: 999px;
+  vertical-align: -0.05em;
+}
+
+.results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sc-3);
+}
+.results li {
+  display: grid;
+  gap: 0.15rem;
+}
+.link {
+  color: #1a0dab;
+  font-weight: 500;
+}
+.desc {
+  color: var(--sc-ink-soft);
+  font-size: var(--sc-t-xs);
+  line-height: 1.4;
+}
+.resultsFaded {
+  opacity: 0.45;
+}
+
+.overview {
+  border: 1px solid color-mix(in oklab, var(--sc-accent) 35%, white);
+  background: color-mix(in oklab, var(--sc-accent) 7%, white);
+  border-radius: var(--sc-r-sm);
+  padding: var(--sc-3) var(--sc-4);
+  display: grid;
+  gap: var(--sc-2);
+}
+.overview p {
+  margin: 0;
+  color: var(--sc-ink);
+  font-size: var(--sc-t-sm);
+  line-height: 1.45;
+  max-width: none;
+}
+.overview b {
+  font-weight: 600;
+}
+.overviewTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: var(--sc-t-xs);
+  font-weight: 600;
+  color: var(--sc-accent);
+  letter-spacing: 0.02em;
+}
+
+.sub {
+  margin: 0;
+  font-size: var(--sc-t-sm);
+  color: var(--sc-ink-soft);
+}

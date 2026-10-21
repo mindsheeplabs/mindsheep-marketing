@@ -10,16 +10,16 @@ import Close, { DEFAULT_LINES } from "./components/Close";
 export const metadata = {
   title: { absolute: "Mindsheep Marketing Australia | We put AI to work in your marketing." },
   description:
-    "More leads, less spend. AI-powered Google Ads, AI SEO, AI social and content, AI-generated websites, and AI chat and voice agents, so the same budget buys you more. Perth based, Australia wide.",
+    "More leads, less spend. Smarter AI Google Ads, AI search and visibility, and AI design and websites, so the same budget buys you more and the work lands faster. Perth based, Australia wide.",
   alternates: { canonical: "/" },
 };
 
 const TICKS = [
   "More leads from the same ad spend.",
-  "Found on Google and in AI search.",
-  "AI images and UGC videos from your own photos.",
+  "Found on Google, and in the AI answers.",
+  "Real-looking images made from your own photos.",
   "A new website designed and live in weeks, for less.",
-  "Every enquiry answered in minutes.",
+  "New campaigns and pages live in days, not weeks.",
 ];
 
 const FACES = [
@@ -43,39 +43,25 @@ const FACES = [
 
 const SERVICES = [
   {
-    kicker: "AI-powered Google Ads",
+    kicker: "Smarter AI Google Ads",
     title: "More leads from the same ad spend",
-    line: "Our own system watches your account every hour and adjusts while it matters.",
+    line: "Your account checked every hour. New campaigns and pages live in days, not weeks.",
     invite: "Want more from your ads? Click here.",
-    href: "/services/ai-google-ads",
+    href: "/services/smarter-google-ads",
   },
   {
-    kicker: "AI SEO",
+    kicker: "AI search and visibility",
     title: "Found on Google, and in the AI answers",
-    line: "People now ask ChatGPT who to call. We help you show up in the answer.",
+    line: "Google answers first now, and people ask ChatGPT who to call. We get you into those answers.",
     invite: "Want to be found? Click here.",
-    href: "/services/ai-seo",
+    href: "/services/ai-search-visibility",
   },
   {
-    kicker: "AI social and content",
-    title: "Fresh content every week",
-    line: "Video, posts and creative made from your real photos and products, not stock.",
-    invite: "Want content every week? Click here.",
-    href: "/services/ai-social-content",
-  },
-  {
-    kicker: "AI-generated websites",
+    kicker: "AI design and websites",
     title: "A website built from what you already have",
-    line: "Your photos go in. Old images get upscaled. No photo shoot needed. Weeks, not months.",
+    line: "Your photos go in and get upscaled. No photographer, no copywriter. You approve every page.",
     invite: "Want a new website? Click here.",
-    href: "/services/ai-websites",
-  },
-  {
-    kicker: "AI chat and voice agents",
-    title: "Every enquiry answered in minutes",
-    line: "It answers, asks the right questions, quotes on the spot and hands you the lead.",
-    invite: "Want your enquiries handled? Click here.",
-    href: "/services/ai-chat-and-voice",
+    href: "/services/ai-design-websites",
   },
 ];
 
@@ -104,7 +90,7 @@ const CASES = [
     kicker: "Case study · Highline Sheds",
     title: "Twice the leads, 30 percent less cost",
     body:
-      "Highline Sheds was paying too much for every enquiry. We restructured their Google Ads, with our own system watching the account every hour. Now an AI SEO campaign is getting them found for more searches every month.",
+      "Highline Sheds was paying too much for every enquiry. We restructured their Google Ads, with our own system watching the account every hour. Now an AI search campaign is getting them found for more searches every month.",
     result: "2.09 times the leads at 30.5 percent lower cost, in three months.",
   },
   {
@@ -135,7 +121,7 @@ const STEPS = [
   },
   {
     title: "Your numbers change",
-    body: "More enquiries, less wasted spend, fresh content every week.",
+    body: "More enquiries, less wasted spend, new pages in days.",
   },
   {
     title: "We keep it running well",
@@ -191,8 +177,8 @@ export default function Home() {
             <div className="ways__head">
               <h2 className="sc-display sc-display--md">What we do, all with AI inside</h2>
               <p>
-                Five services. Each one has AI doing the slow parts, so the same budget buys you
-                more. Pick the one you need and read how it works.
+                Three services. Each one has AI doing the slow parts, so the same budget buys you
+                more and the work lands faster. Pick the one you need and read how it works.
               </p>
             </div>
             <ol className="cases">

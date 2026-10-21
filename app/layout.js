@@ -20,7 +20,7 @@ const geist = Geist({
 
 const TITLE = "Mindsheep Marketing Australia | We put AI to work in your marketing.";
 const DESCRIPTION =
-  "We put AI to work in your marketing, so the same budget buys you more. AI-powered Google Ads, AI SEO, AI social and content, AI-generated websites, and AI chat and voice agents. Perth based, working with businesses across Australia.";
+  "We put AI to work in your marketing, so the same budget buys you more. Smarter AI Google Ads, AI search and visibility, and AI design and websites. Perth based, working with businesses across Australia.";
 
 export const metadata = {
   metadataBase: new URL("https://mindsheep.com.au"),

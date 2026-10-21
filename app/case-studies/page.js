@@ -74,12 +74,12 @@ const CASES = [
     kicker: "Highline Sheds · Sheds and construction",
     title: "Twice the leads, 30 percent less cost",
     body:
-      "Highline was paying too much for every enquiry. We restructured their Google Ads so the spend lands on the right searches, and added an AI SEO campaign underneath. It is already working: Highline is being found for more searches every month.",
+      "Highline was paying too much for every enquiry. We restructured their Google Ads so the spend lands on the right searches, and added an AI search campaign underneath. It is already working: Highline is being found for more searches every month.",
     result: "2.09 times the leads at 30.5 percent lower cost, in 3 months.",
     challenge:
       "Highline had strong word of mouth and wanted to grow past it. Google Ads was running but underperforming: high spend, low conversion, and nothing on the organic side in a market where people search before they buy.",
     built:
-      "We rebuilt Google Ads from the ground up so each ad only shows for the searches it fits, and cut the spend going to the wrong ones. Our own system watches the account every hour and flags drift before it costs money. Alongside it, an AI SEO campaign on the shed searches people make when ready to buy. It is already delivering: Highline shows up for more searches each month, in the paid and the organic results.",
+      "We rebuilt Google Ads from the ground up so each ad only shows for the searches it fits, and cut the spend going to the wrong ones. Our own system watches the account every hour and flags drift before it costs money. Alongside it, an AI search campaign on the shed searches people make when ready to buy. It is already delivering: Highline shows up for more searches each month, in the paid and the organic results.",
     results: [
       { value: "2.09x", label: "the leads" },
       { value: "30.5%", label: "lower cost per lead" },
@@ -157,7 +157,7 @@ const FAQS = [
   },
   {
     q: "How long before I see something?",
-    a: "Google Ads usually moves in the first month. Highline took 3 months and Aldott took 6. SEO is slower. Websites and chat agents are measured in weeks. You get the timeline before you spend anything.",
+    a: "Google Ads usually moves in the first month. Highline took 3 months and Aldott took 6. Search visibility is slower. Websites and landing pages are measured in weeks. You get the timeline before you spend anything.",
   },
   {
     q: "Do I need to understand the AI side?",

@@ -57,7 +57,7 @@ export default function ContactPage() {
                   <p>
                     Read how each service works first:{" "}
                     <a className="u" href="/services">
-                      see the five services
+                      see the three services
                     </a>
                     , or{" "}
                     <a className="u" href="/case-studies">

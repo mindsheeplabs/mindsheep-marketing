@@ -8,45 +8,31 @@ import Close from "../components/Close";
 export const metadata = {
   title: "Services",
   description:
-    "Five services, all with AI inside: AI-powered Google Ads, AI SEO, AI social and content, AI-generated websites, and AI chat and voice agents. AI does the slow parts, so the same budget buys you more.",
+    "Three services, all with AI inside: smarter AI Google Ads, AI search and visibility, and AI design and websites. AI does the slow parts, so the same budget buys you more and the work lands faster.",
   alternates: { canonical: "/services" },
 };
 
 const SERVICES = [
   {
-    kicker: "AI-powered Google Ads",
+    kicker: "Smarter AI Google Ads",
     title: "More leads from the same ad spend",
-    line: "Our own system watches your account every hour and adjusts while it matters.",
+    line: "Your account checked every hour. New campaigns and pages live in days, not weeks.",
     invite: "Want more from your ads? Click here.",
-    href: "/services/ai-google-ads",
+    href: "/services/smarter-google-ads",
   },
   {
-    kicker: "AI SEO",
+    kicker: "AI search and visibility",
     title: "Found on Google, and in the AI answers",
-    line: "People now ask ChatGPT who to call. We help you show up in the answer.",
+    line: "Google answers first now, and people ask ChatGPT who to call. We get you into those answers.",
     invite: "Want to be found? Click here.",
-    href: "/services/ai-seo",
+    href: "/services/ai-search-visibility",
   },
   {
-    kicker: "AI social and content",
-    title: "Fresh content every week",
-    line: "Video, posts and creative made from your real photos and products, not stock.",
-    invite: "Want content every week? Click here.",
-    href: "/services/ai-social-content",
-  },
-  {
-    kicker: "AI-generated websites",
+    kicker: "AI design and websites",
     title: "A website built from what you already have",
-    line: "Your photos go in. Old images get upscaled. No photo shoot needed. Weeks, not months.",
+    line: "Your photos go in and get upscaled. No photographer, no copywriter. You approve every page.",
     invite: "Want a new website? Click here.",
-    href: "/services/ai-websites",
-  },
-  {
-    kicker: "AI chat and voice agents",
-    title: "Every enquiry answered in minutes",
-    line: "It answers, asks the right questions, quotes on the spot and hands you the lead.",
-    invite: "Want your enquiries handled? Click here.",
-    href: "/services/ai-chat-and-voice",
+    href: "/services/ai-design-websites",
   },
 ];
 
@@ -66,7 +52,7 @@ const STEPS = [
   },
   {
     title: "Your numbers change",
-    body: "More enquiries, less wasted spend, fresh content every week.",
+    body: "More enquiries, less wasted spend, new pages in days.",
   },
   {
     title: "We keep it running well",
@@ -85,7 +71,7 @@ export default function ServicesPage() {
           <div className="plate">
             <StoryHead
               kicker="What we do"
-              title="Five services, all with AI inside."
+              title="Three services, all with AI inside."
               lead="AI does the slow parts, so the same budget buys you more. Pick the one you need."
             />
 

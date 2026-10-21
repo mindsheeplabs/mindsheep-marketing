@@ -455,3 +455,22 @@ a.u:hover { color: var(--sc-accent); }
 .bit--real img[src*="willship-logo"] { filter: invert(1) brightness(0.4); }
 /* Contact has one block in the main column, so do not reserve six rows for the aside. */
 .story--contact .story__body > .aside { grid-row: 1; }
+
+/* ------------------------------------------------------------ people --
+   "People like you" on a service page: illustrative owners with a photo,
+   today / what we would do / what changes. Says plainly they are not real
+   clients. Same face size as a case card. */
+.people .tag { display: inline-block; font-size: var(--sc-t-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--sc-accent); font-weight: 500; margin-bottom: var(--sc-3); }
+.people__note { font-size: var(--sc-t-sm); }
+.people__list { list-style: none; margin: var(--sc-5) 0 0 !important; padding: 0 !important; display: grid; gap: var(--sc-5); max-width: none !important; }
+.person { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--sc-5); align-items: start; padding: var(--sc-5); background: #FFFFFF; border: 1px solid var(--sc-hairline); border-radius: var(--sc-r-lg); box-shadow: var(--sc-e1); }
+.person__face { width: 6.5rem; height: 6.5rem; object-fit: cover; border-radius: var(--sc-r-md); display: block; }
+.person__body { display: grid; gap: var(--sc-3); min-width: 0; }
+.person__name { margin: 0; font-family: var(--sc-font-display); font-weight: 600; font-size: var(--sc-t-lg); letter-spacing: var(--sc-track-snug); line-height: 1.2; }
+.person__biz { display: block; font-family: var(--sc-font-text); font-weight: 400; font-size: var(--sc-t-sm); color: var(--sc-ink-soft); letter-spacing: 0; margin-top: 0.15rem; }
+.person__body p { margin: 0; font-size: var(--sc-t-sm); line-height: 1.5; }
+.person__body p + p { margin-top: 0; }
+@media (max-width: 520px) {
+  .person { grid-template-columns: 1fr; }
+  .person__face { width: 5rem; height: 5rem; }
+}
