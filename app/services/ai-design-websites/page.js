@@ -6,6 +6,7 @@ import Ticks from "../../components/Ticks";
 import Faq from "../../components/Faq";
 import Aside from "../../components/Aside";
 import People from "../../components/People";
+import { personasFor } from "../../data/personas";
 import StoryEnd from "../../components/StoryEnd";
 import Others from "../../components/Others";
 import Close from "../../components/Close";
@@ -35,30 +36,6 @@ const STEPS = [
   ["We launch and keep going.", "Forms wired to your inbox, fast on phones, and new pages from a few photos whenever you add something."],
 ];
 
-const PEOPLE = [
-  {
-    name: "Priya",
-    business: "Homewares boutique, Fremantle",
-    src: "/people/personas/priya.webp",
-    alt: "Priya, who runs a homewares boutique, in her shop.",
-    today:
-      "Her website is six years old. The product photos are small and dark, and a photographer quoted her more than the site itself.",
-    we: "Take the photos she has and upscale them. Make the extra imagery with AI in her style. Draft the copy in her voice. She approves each page before it goes live.",
-    after:
-      "A new site in weeks, no photo shoot, no copywriter. When she adds a new range, new pages come from a few phone photos.",
-  },
-  {
-    name: "Tom",
-    business: "Cafe, Perth",
-    src: "/people/personas/tom.webp",
-    alt: "Tom, who runs a cafe, behind his counter.",
-    today:
-      "He has a Facebook page, a menu as a photo, and no website. He has been meaning to fix it for two years.",
-    we: "Build the site from his menu, his reviews and a dozen phone photos. AI fills the gaps: a clean menu page, pictures of the place in the right light, words that sound like him.",
-    after:
-      "People find the menu, the hours and the booking link on their phone. He stops answering are you open on Messenger.",
-  },
-];
 
 const LOGOS = [
   { src: "/clients/westcoast-hifi.svg", alt: "WestCoast HiFi", width: 268, height: 70 },
@@ -103,6 +80,8 @@ export default function AiDesignWebsitesPage() {
             />
 
             <div className="story__body">
+              <People people={personasFor("/services/ai-design-websites")} />
+
               <Bit title="What you no longer pay for" id="no-longer">
                 <p>
                   A website used to mean a photographer, a copywriter, stock photos and months of
@@ -134,7 +113,6 @@ export default function AiDesignWebsitesPage() {
                 </p>
               </Bit>
 
-              <People people={PEOPLE} />
 
               <Bit
                 variant="real"

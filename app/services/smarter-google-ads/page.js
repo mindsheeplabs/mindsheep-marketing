@@ -5,6 +5,7 @@ import Ticks from "../../components/Ticks";
 import Faq from "../../components/Faq";
 import Aside from "../../components/Aside";
 import People from "../../components/People";
+import { personasFor } from "../../data/personas";
 import StoryEnd from "../../components/StoryEnd";
 import Others from "../../components/Others";
 import Close from "../../components/Close";
@@ -31,30 +32,6 @@ const HOW = [
   ["We act.", "A person makes the change the same day and tells you what happened, in plain words."],
 ];
 
-const PEOPLE = [
-  {
-    name: "Sarah",
-    business: "Dental practice, Perth",
-    src: "/people/personas/sarah.webp",
-    alt: "Sarah, who runs a dental practice, at her reception counter.",
-    today:
-      "She spends $3,000 a month on Google Ads through an agency she hears from once a month. She is not sure what it buys.",
-    we: "Rebuild the account around the treatments she wants more of, with a landing page for each. MarketMetrica checks it every hour and tells us the moment cost per booking drifts.",
-    after:
-      "The same $3,000 brings more bookings, and she gets a plain-words note each month saying what changed and why.",
-  },
-  {
-    name: "Jim",
-    business: "Pool builder, Perth",
-    src: "/people/personas/jim.webp",
-    alt: "Jim, who runs a pool building company, in front of a new pool.",
-    today:
-      "His leads dry up in winter and he overspends in spring chasing them. Every new offer takes his agency weeks to get live.",
-    we: "Campaigns for each pool type and suburb, built faster because AI drafts the ads and the pages. When a new offer is ready, the page is live in days.",
-    after:
-      "Spend follows the season instead of fighting it. A new campaign for a new product is a few days of work, so he tries more things.",
-  },
-];
 
 const FAQS = [
   {
@@ -94,6 +71,8 @@ export default function SmarterGoogleAdsPage() {
             />
 
             <div className="story__body">
+              <People people={personasFor("/services/smarter-google-ads")} />
+
               <Bit title="What you get" id="what">
                 <p>Every dollar chases a lead you actually want. Here is what that looks like.</p>
                 <Ticks items={WHAT_YOU_GET} ariaLabel="What you get with smarter AI Google Ads" />
@@ -143,7 +122,6 @@ export default function SmarterGoogleAdsPage() {
                 </p>
               </Bit>
 
-              <People people={PEOPLE} />
 
               <Bit
                 variant="real"

@@ -6,6 +6,8 @@ import CaseCard from "./components/CaseCard";
 import CtaCard from "./components/CtaCard";
 import Plan from "./components/Plan";
 import Close, { DEFAULT_LINES } from "./components/Close";
+import { PeopleGrid } from "./components/People";
+import { PERSONAS, NOT_REAL } from "./data/personas";
 
 export const metadata = {
   title: { absolute: "Mindsheep Marketing Australia | We put AI to work in your marketing." },
@@ -189,7 +191,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2 · What we have done for businesses like yours. */}
+        {/* 2 · People like you: six illustrative owners, each linking to a service. */}
+        <section className="ways ways--people" id="people">
+          <div className="plate">
+            <div className="ways__head">
+              <h2 className="sc-display sc-display--md">People like you</h2>
+              <p>{NOT_REAL} Click one to see how it works.</p>
+            </div>
+            <PeopleGrid people={PERSONAS} field="home" cols={3} linked />
+          </div>
+        </section>
+
+        {/* 3 · What we have done for businesses like yours. */}
         <section className="ways" id="done">
           <div className="plate">
             <h2 className="sc-display sc-display--md">What we have done for businesses like yours</h2>

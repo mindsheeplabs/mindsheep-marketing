@@ -5,6 +5,7 @@ import Ticks from "../../components/Ticks";
 import Faq from "../../components/Faq";
 import Aside from "../../components/Aside";
 import People from "../../components/People";
+import { personasFor } from "../../data/personas";
 import StoryEnd from "../../components/StoryEnd";
 import Others from "../../components/Others";
 import Close from "../../components/Close";
@@ -32,30 +33,6 @@ const HOW = [
   ["We keep going.", "Each month we see what moved, add what is missing, and tell you what it meant in enquiries."],
 ];
 
-const PEOPLE = [
-  {
-    name: "Anna",
-    business: "Physio clinic, northern suburbs",
-    src: "/people/personas/anna.webp",
-    alt: "Anna, who runs a physiotherapy clinic, at her reception desk.",
-    today:
-      "Her clinic shows up for its own name and not much else. When someone asks ChatGPT for a physio near them, she is not in the answer.",
-    we: "Fix the basics on her site, add a plain page for each thing she treats, written the way people ask, and set it up so Google and ChatGPT can read it.",
-    after:
-      "Within a few months she appears for searches like physio for back pain near me, on Google and in the AI answer. New patients say they found her online again.",
-  },
-  {
-    name: "Mick",
-    business: "Plumber, Perth",
-    src: "/people/personas/mick.webp",
-    alt: "Mick, who runs a plumbing business, beside his work van.",
-    today:
-      "Most of his work is word of mouth. Google now answers emergency plumber before anyone scrolls, and it names three of his competitors.",
-    we: "A page for each job he wants more of, hot water, blocked drains, gas, each answering the questions people actually type, with his reviews and service area set up so the AI engines trust the site.",
-    after:
-      "He becomes one of the names in that answer for his suburbs. The phone rings for the jobs he wants, not only the small ones.",
-  },
-];
 
 const FAQS = [
   {
@@ -93,6 +70,8 @@ export default function Page() {
               lead="Google now answers first. People ask ChatGPT who to call. We set your website up so you are in those answers, and still rank the old way too."
             />
             <div className="story__body">
+              <People people={personasFor("/services/ai-search-visibility")} />
+
               <Bit title="What changed" id="shift">
                 <p>
                   Search used to give ten links. Now it often gives one answer at the top, naming two
@@ -132,7 +111,6 @@ export default function Page() {
                 ))}
               </Bit>
 
-              <People people={PEOPLE} />
 
               <Bit
                 variant="real"
