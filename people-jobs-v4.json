@@ -1,0 +1,20 @@
+{
+  "out_dir": "C:/Users/idead/Desktop/mindsheep labs/website/design-previews/shots/people-v4",
+  "size": "1024x1280",
+  "format": "webp",
+  "max_parallel": 3,
+  "skip_existing": false,
+  "style": "\n\nStyle: a real photograph taken on a phone by a colleague, natural daylight, slightly imperfect framing, slight film grain, warm tone, shallow depth of field. An ordinary person, not a model and not conventionally handsome: average face, average build, natural skin with pores, uneven stubble, slightly uneven teeth, no retouching. Clean and tidy, not dirty, not dusty. Keep the person centred with clear space above the head and around the shoulders. No text, no logos, no watermark.",
+  "jobs": [
+    {
+      "name": "young-natural",
+      "n": 2,
+      "prompt": "Scene: the front counter of a small Australian business, daylight through a shopfront window, a laptop and a notebook on the counter, shelving softly out of focus behind.\nSubject: an Australian man about 30 who owns the business; ordinary looks, slightly round face, short hair that is a bit flat, light patchy stubble, a plain grey or navy tee under an open checked overshirt.\nDetails: leaning on the counter with a genuine slightly lopsided grin, eyes a little crinkled, looking at the camera like a mate just said something funny; approachable, a bit shy.\nConstraints: candid and unposed; NOT handsome, NOT a model, no strong jawline, no perfect hair; natural skin; head and shoulders framed with room above."
+    },
+    {
+      "name": "tradie-clean",
+      "n": 2,
+      "prompt": "Scene: a tidy small-business office attached to a workshop in Perth, Australia; afternoon window light; a laptop, a job folder and a coffee mug on the desk; a whiteboard with a scribbled job list out of focus behind.\nSubject: an Australian man in his early 50s who runs a trades business; clean, pressed hi-vis polo or a plain navy work polo, freshly shaved or with a neatly trimmed grey beard, short grey hair neatly combed, clean hands.\nDetails: sitting at the desk, turned toward the camera with a warm, easy, relaxed smile, one forearm resting on the desk; looks like he has just showered and come in from the yard; presentable and friendly.\nConstraints: candid, not posed; ordinary bloke, not a model; clean and tidy, no dirt, no dust, no sweat, no grime; no suit; natural skin; head and shoulders framed with room above."
+    }
+  ]
+}

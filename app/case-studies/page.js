@@ -24,17 +24,13 @@ const CASES = [
     client: "WillShip International",
     face: { src: "/clients/nick.png", alt: "Nick Proctor of WillShip International.", w: 150, h: 150 },
     kicker: "WillShip International · Freight and vehicle shipping",
-    title: "A website they run themselves, and every enquiry quoted",
+    title: "Two quoting chatbots, and the controls to keep them current",
     body:
-      "Every change to the site needed a developer, and every quote started with a form and a phone call. We rebuilt the site on an AI admin system the team controls, and put two chat assistants and an instant-quote wizard inside it.",
-    result: "The team ships their own changes. Every enquiry arrives complete and quoted.",
+      "Freight quotes depend on detail, and every one used to start with a form and a phone call. We built a chatbot that quotes on the spot, then a second one, and a change-control system so WillShip updates pricing and questions themselves.",
+    result: "Two chatbots live. Every enquiry complete and quoted, kept current by WillShip’s own team.",
     challenge:
-      "Freight and vehicle quotes depend on what, where from, where to, how big and how soon. Nick had built a prototype chatbot himself and could see what it could become. The website sat on an old framework, every change needed a developer and waited in a queue, and leads came in half finished, so the sales team spent its day chasing details before it could quote.",
+      "Freight and vehicle quotes depend on what, where from, where to, how big and how soon. Nick had built a prototype chatbot himself and could see what it could become. The website sat on an old framework, every change needed a developer, and leads came in half finished, so the sales team spent its day chasing details before it could quote.",
     built: [
-      {
-        name: "An AI website admin system.",
-        text: "The team changes a page, tests it, rolls it out and rolls it back, with no developer in the loop. The whole site moved onto it.",
-      },
       {
         name: "Alex, the freight chatbot.",
         text: "We took Nick’s prototype and made it a commercial system. It qualifies every freight lead in the chat and lands it in the sales system.",
@@ -44,8 +40,16 @@ const CASES = [
         text: "An instant-quote wizard behind it prices the 23 variables that set vehicle shipping and returns a real quote during the chat.",
       },
       {
+        name: "A change-control system.",
+        text: "When pricing or a shipping situation changes, WillShip’s team updates the chatbot and quote system themselves: make the change, test it, roll it out, roll it back if needed. No developer in the loop.",
+      },
+      {
         name: "Bot-to-deal tracking.",
         text: "Every chat lead is followed through to the deal it became, so WillShip can see which conversations turn into revenue.",
+      },
+      {
+        name: "A full site migration.",
+        text: "A current platform with self-serve editing, so page changes no longer wait on a developer.",
       },
       {
         name: "A Get Started funnel.",
@@ -57,8 +61,8 @@ const CASES = [
       { value: "23", label: "pricing variables handled in the chat, so no phone call to quote" },
     ],
     outcomes: [
-      "A website the team changes, tests and rolls out themselves",
       "Every enquiry arrives complete and quoted before the sales team sees it",
+      "Pricing and questions kept current by WillShip’s own team, with change control",
     ],
     quote: "Great work on the whole project mate, you have done an amazing job. I have just flicked it live.",
     cite: "Nick Proctor, WillShip International",
@@ -93,12 +97,12 @@ const CASES = [
     kicker: "WestCoast HiFi · Consumer electronics",
     title: "A faster store, now with AI-built pages",
     body:
-      "A retailer going hard at online sales, with a slow Shopify store. We rebuilt it for speed and restructured Google Shopping. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on their brand.",
+      "A retailer going hard at online sales, with a slow online store. We rebuilt it for speed and restructured Google Shopping. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on their brand.",
     result: "40 percent faster, with sales and return on ad spend up. New pages shipping now.",
     challenge:
-      "An established retailer moving hard into online sales. The Shopify store was slow and heavy, which hurt conversion and Google Shopping performance, and the campaigns did not have the structure to compete with the big retailers.",
+      "An established retailer moving hard into online sales. The online store was slow and heavy, which hurt conversion and Google Shopping performance, and the campaigns did not have the structure to compete with the big retailers.",
     built:
-      "We rebuilt the Shopify store for speed, a 40 percent gain on page load. Then we restructured Google Shopping so the budget flows to the products that make money instead of spreading thinly across the whole range. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on WestCoast’s branding and the way they write, so every page looks and sounds like them.",
+      "We rebuilt the online store for speed, a 40 percent gain on page load. Then we restructured Google Shopping so the budget flows to the products that make money instead of spreading thinly across the whole range. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on WestCoast’s branding and the way they write, so every page looks and sounds like them.",
     results: [{ value: "40%", label: "faster pages" }],
     outcomes: ["Online sales up", "Return on ad spend up", "New pages built with AI design and copy, in their own brand"],
     quote: "Reliability and Trust is what David and the team provide for us. We know we are in safe hands.",

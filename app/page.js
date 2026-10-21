@@ -32,12 +32,12 @@ const FACES = [
     alt: "A business owner behind the counter of her shop, holding a coffee.",
   },
   {
-    src: "/people/owner-exec-man.webp",
-    alt: "A business owner at a meeting table, listening.",
+    src: "/people/owner-shop.webp",
+    alt: "A shop owner leaning on his front counter, grinning.",
   },
   {
-    src: "/people/owner-workshop.webp",
-    alt: "A business owner standing in his workshop.",
+    src: "/people/owner-tradie.webp",
+    alt: "A trades business owner at his office desk, smiling.",
   },
 ];
 
@@ -84,10 +84,10 @@ const CASES = [
     href: "/case-studies#willship",
     face: { src: "/clients/nick.png", alt: "Nick Proctor of WillShip International." },
     kicker: "Case study · WillShip International",
-    title: "A website they run themselves",
+    title: "Quoting in seconds, and they control it",
     body:
-      "Every change to WillShip's site used to need a developer. We rebuilt it on an AI admin system their team controls: change a page, test it, roll it out, roll it back. The same system quotes vehicle shipping on the spot and hands each enquiry over complete.",
-    result: "The team ships their own changes. Every enquiry arrives complete and quoted.",
+      "Their customers ask detailed shipping questions all day. We built a chatbot that asks what an estimator would ask and quotes on the spot, then a second one. Behind them, a change-control system so WillShip updates pricing and questions themselves when things change.",
+    result: "Two chatbots live. Every enquiry arrives complete and quoted, and stays right as prices move.",
   },
   {
     href: "/case-studies#westcoast-hifi",
@@ -95,7 +95,7 @@ const CASES = [
     kicker: "Case study · WestCoast HiFi",
     title: "A faster store, now with AI-built pages",
     body:
-      "WestCoast HiFi's Shopify store was slow. We rebuilt it for speed and restructured Google Shopping. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on their brand and their own words.",
+      "WestCoast HiFi's online store was slow. We rebuilt it for speed and restructured Google Shopping. Now we are rolling out whole new pages with AI graphic design and AI copy, trained on their brand and their own words.",
     result: "40 percent faster. Sales and return on ad spend up. New pages shipping now.",
   },
   {

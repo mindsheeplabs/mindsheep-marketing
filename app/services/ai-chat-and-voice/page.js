@@ -40,6 +40,7 @@ const WILLSHIP = [
   "Alex, their freight chatbot, now live and answering shipping questions.",
   "Sam, a second assistant for vehicle shipping.",
   "A quote wizard that prices 23 variables during the chat.",
+  "A change-control system, so WillShip updates pricing and questions themselves.",
   "Every enquiry now arrives complete and quoted.",
 ];
 

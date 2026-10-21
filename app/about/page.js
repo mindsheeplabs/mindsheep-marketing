@@ -59,7 +59,7 @@ const TEAM = [
   },
   {
     name: "Rio",
-    role: "Web and Shopify",
+    role: "Web and online stores",
     initials: "R",
     photo: null,
     body: "Builds fast sites and stores from your own photos, products and words.",
