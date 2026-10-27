@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { snapshot } from "../lib/visitor";
 
 /**
  * The booking form. Used inside BookDialog and inline on /contact
  * (wrap it in <div className="book book--inline">). Client component.
- * POSTs JSON {name, email, business, budget} to /api/contact. Keep that
- * contract. Budget values: under5k, 5k-15k, 15k-50k, 50k+.
+ * POSTs JSON {name, email, business, budget, meta} to /api/contact. Keep that
+ * contract. meta is the visitor snapshot (page, referrer, first touch, trail,
+ * device), gathered at submit time by app/lib/visitor.js. Budget values: under5k, 5k-15k, 15k-50k, 50k+.
  *
  * Props (all optional)
  *  - idPrefix: for field ids, default "book". Use another when two forms share a page.
@@ -35,6 +37,7 @@ export default function BookForm({
   note = "A real conversation, not a sales pitch.",
 }) {
   const [status, setStatus] = useState("idle"); // idle | sending | done | error
+  const startedAt = useRef(null); // first keystroke, for time-to-fill
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -45,6 +48,11 @@ export default function BookForm({
       email: form.email.value,
       business: form.business.value,
       budget: form.budget.value,
+      meta: snapshot({
+        variant: idPrefix === "contact" ? "inline on /contact" : "pop-up dialog",
+        fillMs: startedAt.current ? Date.now() - startedAt.current : undefined,
+        honeypot: form.website ? form.website.value : "",
+      }),
     };
     try {
       const res = await fetch("/api/contact", {
@@ -55,6 +63,13 @@ export default function BookForm({
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
       setStatus("done");
+      try {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", { form: data.meta?.variant, budget: data.budget || "unset" });
+        }
+      } catch {
+        /* analytics must never break the form */
+      }
     } catch {
       setStatus("error");
     }
@@ -83,7 +98,22 @@ export default function BookForm({
   }
 
   return (
-    <form className="book__form" onSubmit={onSubmit}>
+    <form
+      className="book__form"
+      onSubmit={onSubmit}
+      onFocusCapture={() => {
+        if (!startedAt.current) startedAt.current = Date.now();
+      }}
+    >
+      {/* Honeypot: hidden from people, filled by bots. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       {closeButton ? (
         <button className="book__close" type="button" data-book-close aria-label="Close">
           &times;

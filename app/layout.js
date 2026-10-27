@@ -2,6 +2,8 @@ import { Geist, Outfit } from "next/font/google";
 import "./globals.css";
 import Sky from "./components/Sky";
 import BookDialog from "./components/BookDialog";
+import Attribution from "./components/Attribution";
+import Analytics from "./components/Analytics";
 
 // Two families, as on mindsheeplabs.com: Outfit 600 for display, Geist for
 // everything you read. Both are variable fonts, so no weight list is needed.
@@ -44,8 +46,10 @@ export default function RootLayout({ children }) {
     <html lang="en-AU">
       <body className={`${outfit.variable} ${geist.variable}`}>
         <Sky />
+        <Attribution />
         {children}
         <BookDialog />
+        <Analytics />
       </body>
     </html>
   );
