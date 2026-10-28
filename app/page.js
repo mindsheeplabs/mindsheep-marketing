@@ -8,13 +8,17 @@ import Plan from "./components/Plan";
 import Close, { DEFAULT_LINES } from "./components/Close";
 import { PeopleGrid } from "./components/People";
 import { PERSONAS, NOT_REAL } from "./data/personas";
+import { metaFor } from "./lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: { absolute: "Mindsheep Marketing Australia | We put AI to work in your marketing." },
   description:
     "More leads, less spend. Smarter AI Google Ads, AI search and visibility, and AI design and websites, so the same budget buys you more and the work lands faster. Perth based, Australia wide.",
   alternates: { canonical: "/" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/", DEFAULT_METADATA);
 
 const TICKS = [
   "More leads from the same ad spend.",

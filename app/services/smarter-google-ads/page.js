@@ -9,13 +9,17 @@ import { personasFor } from "../../data/personas";
 import StoryEnd from "../../components/StoryEnd";
 import Others from "../../components/Others";
 import Close from "../../components/Close";
+import { metaFor, faqsFor } from "../../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "Smarter AI Google Ads",
   description:
     "More leads from the same ad spend. Your account is checked every hour by our own system, new campaigns and landing pages go live in days, and a person tells you what changed in plain words.",
   alternates: { canonical: "/services/smarter-google-ads" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/services/smarter-google-ads", DEFAULT_METADATA);
 
 const WHAT_YOU_GET = [
   "An account built around the jobs you want.",
@@ -33,28 +37,7 @@ const HOW = [
 ];
 
 
-const FAQS = [
-  {
-    q: "Do I own the account?",
-    a: "Yes, always. It is in your name, you pay Google directly, and everything stays with you if you ever leave.",
-  },
-  {
-    q: "Is there a minimum spend?",
-    a: "No fixed figure. Your budget needs to buy enough clicks to learn what converts. We tell you plainly what that takes.",
-  },
-  {
-    q: "How soon will I see results?",
-    a: "Leads usually start within weeks. Most of the gain comes over the first two to three months.",
-  },
-  {
-    q: "What does the AI actually do?",
-    a: "It drafts the ad wording, makes the images from your photos, builds the landing pages, pulls the numbers every hour and writes the first draft of your report. A person checks all of it and makes the decisions.",
-  },
-  {
-    q: "What do you need from me?",
-    a: "About an hour at the start, access to your account, your photos and offers, then quick replies when we flag a decision.",
-  },
-];
+const FAQS = faqsFor("smarter-google-ads");
 
 export default function SmarterGoogleAdsPage() {
   return (

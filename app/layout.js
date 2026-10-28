@@ -4,6 +4,7 @@ import Sky from "./components/Sky";
 import BookDialog from "./components/BookDialog";
 import Attribution from "./components/Attribution";
 import Analytics from "./components/Analytics";
+import { GSC_VERIFICATION } from "./data/tracking";
 
 // Two families, as on mindsheeplabs.com: Outfit 600 for display, Geist for
 // everything you read. Both are variable fonts, so no weight list is needed.
@@ -31,6 +32,7 @@ export const metadata = {
     template: "%s | Mindsheep Marketing Australia",
   },
   description: DESCRIPTION,
+  ...(GSC_VERIFICATION ? { verification: { google: GSC_VERIFICATION } } : {}),
   openGraph: {
     type: "website",
     siteName: "Mindsheep Marketing Australia",

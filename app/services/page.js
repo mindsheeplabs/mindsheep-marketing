@@ -4,13 +4,17 @@ import ServiceCard from "../components/ServiceCard";
 import CtaCard from "../components/CtaCard";
 import Plan from "../components/Plan";
 import Close from "../components/Close";
+import { metaFor } from "../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "Services",
   description:
     "Three services, all with AI inside: smarter AI Google Ads, AI search and visibility, and AI design and websites. AI does the slow parts, so the same budget buys you more and the work lands faster.",
   alternates: { canonical: "/services" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/services", DEFAULT_METADATA);
 
 const SERVICES = [
   {

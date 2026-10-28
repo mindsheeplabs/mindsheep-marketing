@@ -7,13 +7,17 @@ import Others from "../components/Others";
 import Close from "../components/Close";
 import Drawer from "./Drawer";
 import styles from "./page.module.css";
+import { metaFor, faqsFor } from "../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "Case studies",
   description:
     "Real results for Australian businesses. WillShip, Highline Sheds, WestCoast HiFi, Aldott Homes and Progressive Car Sound: more leads, less wasted spend and every enquiry handled, on the same budget.",
   alternates: { canonical: "/case-studies" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/case-studies", DEFAULT_METADATA);
 
 /* ------------------------------------------------------------------ data */
 
@@ -146,24 +150,7 @@ const CASES = [
   },
 ];
 
-const FAQS = [
-  {
-    q: "Are these numbers real?",
-    a: "Yes. Every figure is from a client account we run or a system we built. Where a client has not given us a number to publish, we say up or down and leave it there. We do not project, round up or borrow from industry averages.",
-  },
-  {
-    q: "Will this work in my industry?",
-    a: "The businesses on this page build homes, ship freight, sell sheds and sell hi-fi. The method is the same: start from your numbers, build from your own photos and words, test more than one version, watch the account every hour. If we do not think it will work for you, we will say so.",
-  },
-  {
-    q: "How long before I see something?",
-    a: "Google Ads usually moves in the first month. Highline took 3 months and Aldott took 6. Search visibility is slower. Websites and landing pages are measured in weeks. You get the timeline before you spend anything.",
-  },
-  {
-    q: "Do I need to understand the AI side?",
-    a: "No. We set it up and run it. You see the result in leads, sales and hours back. If you want to know how something works, we will explain it in plain words, but you never have to.",
-  },
-];
+const FAQS = faqsFor("case-studies");
 
 /* --------------------------------------------------------------- pieces */
 

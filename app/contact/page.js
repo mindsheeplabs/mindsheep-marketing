@@ -2,13 +2,17 @@ import Topbar from "../components/Topbar";
 import StoryHead from "../components/StoryHead";
 import BookForm from "../components/BookForm";
 import Close from "../components/Close";
+import { metaFor } from "../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "Contact",
   description:
     "Book your free AI marketing assessment. Tell us a little about your business and we will come back within one business day. Perth based, working with businesses across Australia.",
   alternates: { canonical: "/contact" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/contact", DEFAULT_METADATA);
 
 export default function ContactPage() {
   return (

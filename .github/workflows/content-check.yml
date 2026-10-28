@@ -1,0 +1,35 @@
+name: content-check
+
+# Runs on every pull request. Pull requests opened by the site content MCP
+# (branches named mcp/...) may only touch content/ and public/uploads/; the
+# MCP service also refuses to merge one that does. Everything is built, so a
+# content change that would break the site fails here instead of in production.
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  content-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Path guard for MCP branches
+        if: startsWith(github.head_ref, 'mcp/')
+        run: |
+          bad=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -v -E '^(content/|public/uploads/)' || true)
+          if [ -n "$bad" ]; then
+            echo "MCP change touches files outside content/ and public/uploads/:"
+            echo "$bad"
+            exit 1
+          fi
+      - run: npm ci
+      - name: Validate content
+        run: node scripts/validate-content.mjs
+      - run: npm run lint
+      - run: npm run build

@@ -2,6 +2,8 @@
  * /sitemap.xml. Every public route, newest first. Add a line when a page
  * is added. Redirected routes are left out on purpose.
  */
+import { contentSlugs } from "./lib/content";
+
 const BASE = "https://mindsheep.com.au";
 
 const ROUTES = [
@@ -17,5 +19,6 @@ const ROUTES = [
 
 export default function sitemap() {
   const lastModified = new Date();
-  return ROUTES.map((r) => ({ url: `${BASE}${r.path}`, lastModified, ...r, path: undefined }));
+  const added = contentSlugs().map((s) => ({ path: `/${s}`, priority: 0.7, changeFrequency: "monthly" }));
+  return [...ROUTES, ...added].map((r) => ({ url: `${BASE}${r.path}`, lastModified, ...r, path: undefined }));
 }
