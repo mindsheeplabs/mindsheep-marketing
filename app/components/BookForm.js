@@ -64,8 +64,15 @@ export default function BookForm({
       form.reset();
       setStatus("done");
       try {
+        const lead = { form: data.meta?.variant, budget: data.budget || "unset" };
         if (typeof window.gtag === "function") {
-          window.gtag("event", "generate_lead", { form: data.meta?.variant, budget: data.budget || "unset" });
+          // GA4 on its own (no GTM container): gtag is loaded.
+          window.gtag("event", "generate_lead", lead);
+        } else {
+          // GTM mode: gtag is not loaded, so the event goes on the dataLayer
+          // for a GTM trigger to pick up and send to GA4.
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: "generate_lead", ...lead });
         }
       } catch {
         /* analytics must never break the form */
