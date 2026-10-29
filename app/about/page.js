@@ -6,13 +6,17 @@ import Aside from "../components/Aside";
 import StoryEnd from "../components/StoryEnd";
 import Close from "../components/Close";
 import styles from "./page.module.css";
+import { metaFor } from "../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "About",
   description:
     "Perth based, working with businesses across Australia. In 2024 we rebuilt the agency around AI, so the same budget buys you more leads, more content and more pages. Meet the people doing the work.",
   alternates: { canonical: "/about" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/about", DEFAULT_METADATA);
 
 const FOUNDER_PHOTO = "/WhatsApp Image 2025-09-22 at 10.31.29.jpeg";
 

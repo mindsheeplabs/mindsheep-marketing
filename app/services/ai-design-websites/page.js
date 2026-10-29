@@ -11,13 +11,17 @@ import StoryEnd from "../../components/StoryEnd";
 import Others from "../../components/Others";
 import Close from "../../components/Close";
 import styles from "./page.module.css";
+import { metaFor, faqsFor } from "../../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "AI design and websites",
   description:
     "A website built from what you already have. Your photos go in and get upscaled, AI makes the imagery you are missing, the words are drafted in your voice, and you approve every page. No photographer, no copywriter, live in weeks.",
   alternates: { canonical: "/services/ai-design-websites" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/services/ai-design-websites", DEFAULT_METADATA);
 
 const NO_LONGER = [
   "No photographer. Your photos, upscaled, and AI images in your style.",
@@ -42,28 +46,7 @@ const LOGOS = [
   { src: "/clients/willship-logo.webp", alt: "WillShip International", width: 230, height: 45 },
 ];
 
-const FAQS = [
-  {
-    q: "Will AI images look fake?",
-    a: "Not the way we do them. They are made from your real photos, your colours and your kind of work, then checked by a person. You would be surprised how good these systems are now. You see every image before it goes live, and anything that does not look right gets redone.",
-  },
-  {
-    q: "How long does it take?",
-    a: "Most sites go live within weeks of us having your photos and words. A shop or a quoting tool takes longer, and we tell you before you commit.",
-  },
-  {
-    q: "Do I own the website?",
-    a: "Yes. The domain, the design, the content and the code are yours. If you ever move on, you take all of it with you.",
-  },
-  {
-    q: "Can I change it myself?",
-    a: "Yes. You get a simple editor for the things that change: prices, photos, team, offers. For anything bigger, message us and we make the change.",
-  },
-  {
-    q: "What does it cost?",
-    a: "It depends on the pages you need and what the site has to do. Because there is no photo shoot and no copywriter, it is less than you expect. On the call we work out exactly that and give you a fixed figure.",
-  },
-];
+const FAQS = faqsFor("ai-design-websites");
 
 export default function AiDesignWebsitesPage() {
   return (

@@ -10,13 +10,17 @@ import StoryEnd from "../../components/StoryEnd";
 import Others from "../../components/Others";
 import Close from "../../components/Close";
 import SearchShift from "./SearchShift";
+import { metaFor, faqsFor } from "../../lib/content";
 
-export const metadata = {
+const DEFAULT_METADATA = {
   title: "AI search and visibility",
   description:
     "Google now answers first, and people ask ChatGPT who to call. We set your website up so you are in those answers, and still rank on Google. Few businesses have done this yet, so the gains come fast.",
   alternates: { canonical: "/services/ai-search-visibility" },
 };
+
+// Title, description and og image can be overridden from content/meta.json.
+export const metadata = metaFor("/services/ai-search-visibility", DEFAULT_METADATA);
 
 const GET = [
   "A plain report of where you show up today.",
@@ -34,28 +38,7 @@ const HOW = [
 ];
 
 
-const FAQS = [
-  {
-    q: "Is this instead of normal SEO?",
-    a: "No, it sits on top. AI answers lean on pages that already rank well and answer a question clearly. We do the proper Google work first, then shape your pages so AI can quote them.",
-  },
-  {
-    q: "How long does it take?",
-    a: "The look and the fixes happen in the first few weeks. Google usually starts moving in two to three months. Because few businesses have done this yet, the AI side often moves sooner. We tell you what we see each month, not what we hope.",
-  },
-  {
-    q: "Can you guarantee ChatGPT will mention us?",
-    a: "No. Nobody can, and anyone who says they can is guessing. What we do: rank you on Google for the right questions, answer them clearly on your site, set the pages up so AI can read them, and measure what the engines say about you every month.",
-  },
-  {
-    q: "Do I need to understand any of this?",
-    a: "No. You need to tell us what you do, where you do it, and the questions customers ask you every week. We do the rest and explain it in plain words.",
-  },
-  {
-    q: "What do you need from me?",
-    a: "Less than you expect. About an hour at the start, photos of real jobs, and a yes or no on each page before it goes live.",
-  },
-];
+const FAQS = faqsFor("ai-search-visibility");
 
 export default function Page() {
   return (
