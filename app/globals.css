@@ -180,22 +180,33 @@ a.u:hover { color: var(--sc-accent); }
   .hero__sub { font-size: var(--sc-t-base); }
 }
 
-/* The checklist. Ticks itself once after load, CSS only, then stays.
-   No JS needed; with reduced motion it is simply ticked. */
+/* The checklist, as on mindsheeplabs.com: each list ticks itself once it is
+   on screen (Reveal adds .is-in), one box after another, then stays.
+   Without JavaScript, and with reduced motion, it is simply ticked. */
 .hero__ticks { list-style: none; margin: var(--sc-6) 0 0; padding: 0; display: grid; gap: var(--sc-2); font-size: var(--sc-t-lg); line-height: 1.35; color: var(--sc-ink); max-width: 40ch; }
 .hero__ticks li { display: flex; align-items: center; gap: var(--sc-4); --d: calc(0.8s + var(--i, 0) * 0.45s); }
 .tick { flex: 0 0 auto; width: 1.5em; height: 1.5em; display: block; }
 .tick svg { width: 100%; height: 100%; display: block; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.tick__box { stroke: #B7C2BB; fill: #FFFFFF; animation: tick-box 260ms var(--sc-ease-out) var(--d, 0.8s) forwards; }
-.tick__mark { stroke: #FFFFFF; stroke-width: 2.6; stroke-dasharray: 1; stroke-dashoffset: 1; animation: tick-mark 320ms var(--sc-ease-out) calc(var(--d, 0.8s) + 0.12s) forwards; }
+.tick__box { stroke: #1E7F53; fill: #1E7F53; }
+.tick__mark { stroke: #FFFFFF; stroke-width: 2.6; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.js .tick__box { stroke: #B7C2BB; fill: #FFFFFF; }
+.js .tick__mark { stroke-dashoffset: 1; }
+.js .is-in .tick__box, .js .hero__ticks.is-in .tick__box { animation: tick-box 260ms var(--sc-ease-out) var(--d, 0.8s) forwards; }
+.js .is-in .tick__mark, .js .hero__ticks.is-in .tick__mark { animation: tick-mark 320ms var(--sc-ease-out) calc(var(--d, 0.8s) + 0.12s) forwards; }
 @keyframes tick-box { to { fill: #1E7F53; stroke: #1E7F53; } }
 @keyframes tick-mark { to { stroke-dashoffset: 0; } }
 @media (max-width: 700px) { .hero__ticks { font-size: var(--sc-t-base); } }
 @media (prefers-reduced-motion: reduce) {
-  .tick__box, .tick__mark { animation: none; }
-  .tick__box { fill: #1E7F53; stroke: #1E7F53; }
-  .tick__mark { stroke-dashoffset: 0; }
+  .js .tick__box, .js .tick__mark, .js .is-in .tick__box, .js .is-in .tick__mark { animation: none; }
+  .js .tick__box { fill: #1E7F53; stroke: #1E7F53; }
+  .js .tick__mark { stroke-dashoffset: 0; }
 }
+
+/* Reveal on entry (Reveal.js), as Labs' flow reveal: fade up 14px, once.
+   Only under html.js, so nothing is hidden without JavaScript. */
+.js [data-reveal]:not([data-stagger]), .js [data-stagger] > * { opacity: 0; transform: translate3d(0, 14px, 0); transition: opacity 620ms var(--sc-ease-out), transform 620ms var(--sc-ease-out); }
+.js [data-reveal].is-in:not([data-stagger]), .js [data-stagger] > .is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js [data-reveal]:not([data-stagger]), .js [data-stagger] > * { transform: none; transition-duration: 220ms; } }
 
 /* The person. Desktop only: a 4:5 frame on the right, three faces that
    cross-fade on an 18 second loop. Phones keep the screen as type alone. */
