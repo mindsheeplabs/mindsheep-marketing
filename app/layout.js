@@ -4,6 +4,7 @@ import Sky from "./components/Sky";
 import BookDialog from "./components/BookDialog";
 import Attribution from "./components/Attribution";
 import Analytics from "./components/Analytics";
+import Reveal from "./components/Reveal";
 import { GSC_VERIFICATION } from "./data/tracking";
 
 // Two families, as on mindsheeplabs.com: Outfit 600 for display, Geist for
@@ -45,9 +46,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-AU">
+    <html lang="en-AU" suppressHydrationWarning>
       <body className={`${outfit.variable} ${geist.variable}`}>
+        {/* Set before first paint, so reveal start states apply only when JavaScript runs. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <Sky />
+        <Reveal />
         <Attribution />
         {children}
         <BookDialog />

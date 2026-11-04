@@ -145,7 +145,7 @@ export default function Home() {
         {/* 0 · The sentence. */}
         <section className="hero">
           <div className="plate hero__grid">
-            <div>
+            <div data-reveal data-stagger="90">
               <h1>
                 <span className="l1">We put AI to work in your marketing.</span>
                 <span className="l2">More leads, less spend.</span>
@@ -160,7 +160,7 @@ export default function Home() {
                 </a>
               </p>
             </div>
-            <figure className="hero__photo">
+            <figure className="hero__photo" data-reveal>
               {FACES.map((f, i) => (
                 <Image
                   key={f.src}
