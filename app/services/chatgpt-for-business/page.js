@@ -107,9 +107,9 @@ export default function ChatGptForBusinessPage() {
 
               <Bit title="ChatGPT Ads" id="ads">
                 <p>
-                  <b>Your ad shows below ChatGPT's answer</b>, with your business name, logo, a
+                  <b>Your ad shows below ChatGPT’s answer</b>, with your business name, logo, a
                   headline, a short message, an image and a link to your site. It is shown to people on
-                  ChatGPT's free plan.
+                  ChatGPT’s free plan.
                 </p>
                 <p>
                   There are no keywords. We describe the conversations your business fits, and ChatGPT
@@ -130,7 +130,7 @@ export default function ChatGptForBusinessPage() {
 
               <Bit title="What it does, and what it doesn't" id="honest">
                 <p>
-                  Claiming your listing doesn't on its own make ChatGPT recommend you more. OpenAI is
+                  Claiming your listing doesn’t on its own make ChatGPT recommend you more. OpenAI is
                   clear about that. <b>What earns the mentions is your website</b>: a mention is counted
                   when ChatGPT points to it. So we do both: the listing for the facts, the website for the
                   mentions, and ads where you want to be seen now.
