@@ -9,7 +9,7 @@ import { metaFor } from "../lib/content";
 const DEFAULT_METADATA = {
   title: "Services",
   description:
-    "Three services, all with AI inside: smarter AI Google Ads, AI search and visibility, and AI design and websites. AI does the slow parts, so the same budget buys you more and the work lands faster.",
+    "Four services, all with AI inside: smarter AI Google Ads, AI search and visibility, AI design and websites, and ChatGPT for business. AI does the slow parts, so the same budget buys you more and the work lands faster.",
   alternates: { canonical: "/services" },
 };
 
@@ -37,6 +37,13 @@ const SERVICES = [
     line: "Your photos go in and get upscaled. No photographer, no copywriter. You approve every page.",
     invite: "Want a new website? Click here.",
     href: "/services/ai-design-websites",
+  },
+  {
+    kicker: "ChatGPT for business",
+    title: "Get your business into ChatGPT",
+    line: "Your free ChatGPT business listing set up, your website made easy for ChatGPT to quote, and ChatGPT Ads.",
+    invite: "Want to be in ChatGPT? Click here.",
+    href: "/services/chatgpt-for-business",
   },
 ];
 
@@ -75,7 +82,7 @@ export default function ServicesPage() {
           <div className="plate">
             <StoryHead
               kicker="What we do"
-              title="Three services, all with AI inside."
+              title="Four services, all with AI inside."
               lead="AI does the slow parts, so the same budget buys you more. Pick the one you need."
             />
 

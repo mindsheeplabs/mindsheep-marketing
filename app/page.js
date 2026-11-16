@@ -69,6 +69,13 @@ const SERVICES = [
     invite: "Want a new website? Click here.",
     href: "/services/ai-design-websites",
   },
+  {
+    kicker: "ChatGPT for business",
+    title: "Get your business into ChatGPT",
+    line: "Your free ChatGPT business listing set up, your website made easy for ChatGPT to quote, and ChatGPT Ads.",
+    invite: "Want to be in ChatGPT? Click here.",
+    href: "/services/chatgpt-for-business",
+  },
 ];
 
 const CASES = [
@@ -183,7 +190,7 @@ export default function Home() {
             <div className="ways__head">
               <h2 className="sc-display sc-display--md">What we do, all with AI inside</h2>
               <p>
-                Three services. Each one has AI doing the slow parts, so the same budget buys you
+                Four services. Each one has AI doing the slow parts, so the same budget buys you
                 more and the work lands faster. Pick the one you need and read how it works.
               </p>
             </div>

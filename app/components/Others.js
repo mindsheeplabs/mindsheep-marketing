@@ -5,7 +5,7 @@ import Link from "next/link";
  *
  * Props
  *  - title: default "The other services"
- *  - links: [{ href, label }]; default is the three services
+ *  - links: [{ href, label }]; default is the four services
  *  - current: href to leave out (the page you are on)
  *
  * <Others current="/services/ai-websites" />
@@ -14,6 +14,7 @@ export const SERVICES = [
   { href: "/services/smarter-google-ads", label: "Smarter AI Google Ads" },
   { href: "/services/ai-search-visibility", label: "AI search and visibility" },
   { href: "/services/ai-design-websites", label: "AI design and websites" },
+  { href: "/services/chatgpt-for-business", label: "ChatGPT for business" },
 ];
 
 export default function Others({ title = "The other services", links = SERVICES, current }) {

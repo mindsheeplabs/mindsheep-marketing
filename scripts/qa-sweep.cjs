@@ -5,7 +5,7 @@
 const PW = process.env.PLAYWRIGHT_CORE || 'C:/Users/idead/Desktop/mindsheep labs/labs-site/scrollcraft/builds/labs-home/node_modules/playwright-core';
 const { chromium } = require(PW);
 const BASE = process.argv[2] || 'http://localhost:3100';
-const ROUTES = ['/', '/services', '/services/smarter-google-ads', '/services/ai-search-visibility', '/services/ai-design-websites', '/about', '/case-studies', '/contact'];
+const ROUTES = ['/', '/services', '/services/smarter-google-ads', '/services/ai-search-visibility', '/services/ai-design-websites', '/services/chatgpt-for-business', '/about', '/case-studies', '/contact'];
 const BANNED = [/human to human/i, /humans helping humans/i, /\bauthentic\b/i, /AgencyMetrica/, /Shopify/, / — /];
 (async () => {
   const b = await chromium.launch({ channel: 'chrome', headless: true });
